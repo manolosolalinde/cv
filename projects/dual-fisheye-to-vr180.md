@@ -12,7 +12,7 @@ Results achieved were x100+ times faster in terms of frame rates, than the ones 
 
 ## Sample video (up: dual fisheye 90º yaw difference; down: 180º equirectangular projection) 
 
-Youtube Link: https://www.youtube.com/watch?v=gHSUaYhKRxA
+Youtube Link: [https://www.youtube.com/watch?v=gHSUaYhKRxA](https://www.youtube.com/watch?v=gHSUaYhKRxA)
 
  <a href="./images/cuda_stitcher.jpg">
 <img src="./images/cuda_stitcher.jpg" alt="Click for youtube video" style="width:400px;"/>

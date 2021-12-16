@@ -1,31 +1,31 @@
 # Centralhub - E-commerce Search Engine
 
-Website: www.centralhub.com.py
-Developer: Nestor Solalinde (manolosolalinde@gmail.com)
+Website: [www.centralhub.com.py](www.centralhub.com.py) <br>
+Developer: Nestor Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
 A search engine platform based on specialized web scraping for local e-commerce sites. 
 
 This platform consists of 5 different sub-projects: 
 
-1) An E-commerce Search Engine Frontend, 
+1. An E-commerce Search Engine Frontend, 
     - Project Id: ch_se
     - Project website: https://www.centralhub.com.py/
     - Description: Search Engine Frontend visible to the public (the final result).
     - Technologies: React, Redux, Nextjs, Firebase, Git.
-2) E-commerce Search Engine Admin Backend, 
+2. E-commerce Search Engine Admin Backend, 
     - Project Id: ch_scraper_gui
     - Project website: https://centralhub-scrape-gui.web.app/
     - Description: Search Engine Admin Backend visible to the admin.
     - Technologies: Nodejs, React, Redux, Firebase, Github.
-3) Web scraping API core and tools, 
+3. Web scraping API core and tools, 
     - Project Id: ch_scraper_api
     - Description: The core scraping module, used to run tests and background tasks using configuration files.
     - Technologies: Python, Flask, Docker, NoSQL, Firebase, Google Cloud Platform, Git.
-4) Web scraping automation and synchronization tools, 
+4. Web scraping automation and synchronization tools, 
     - Project Id: ch_scraper_functions
     - Description: A set of tools to update databases, synchronize data between different services, and trigger events based on specific conditions.
     - Technologies: Nodejs, PubSub, Firebase Functions, Cloud Scheduler, Google Cloud Platform, Git, Task Scheduler, Compute Engine API.
-5) Devops, Search Engine Implementation, Architecture, and Integrations.
+5. Devops, Search Engine Implementation, Architecture, and Integrations.
     - Project Id: ch_devops
     - Description: A set of documents, scripts, and directives used to set up services, assuring that everything works as expected.
     - Technologies: Docker, Pytest, Jest, Firestore, Elasticsearch, Google Cloud Platform.
