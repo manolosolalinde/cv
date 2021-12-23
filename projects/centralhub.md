@@ -1,20 +1,28 @@
+---
+title: Centralhub - E-commerce Search Engine
+description: A search engine platform based on web scraping of local e-commerce sites.
+hero_image_url: ./images/CH_ARCHITECTURE.jpg
+hero_image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/CH_ARCHITECTURE.jpg
+---
+
+
 # Centralhub - E-commerce Search Engine
 
-Website: [www.centralhub.com.py](www.centralhub.com.py) <br>
+Website: [www.centralhub.com.py](https://www.centralhub.com.py) <br>
 Developer: Nestor Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
-A search engine platform based on specialized web scraping for local e-commerce sites. 
+A search engine platform for specialized web scraping of local e-commerce sites. 
 
 This platform consists of 5 different sub-projects: 
 
 1. An E-commerce Search Engine Frontend, 
     - Project Id: ch_se
-    - Project website: https://www.centralhub.com.py/
+    - Project website: [https://www.centralhub.com.py/](https://www.centralhub.com.py/)
     - Description: Search Engine Frontend visible to the public (the final result).
     - Technologies: React, Redux, Nextjs, Firebase, Git.
 2. E-commerce Search Engine Admin Backend, 
     - Project Id: ch_scraper_gui
-    - Project website: https://centralhub-scrape-gui.web.app/
+    - Project website: [https://centralhub-scrape-gui.web.app/](https://centralhub-scrape-gui.web.app/)
     - Description: Search Engine Admin Backend visible to the admin.
     - Technologies: Nodejs, React, Redux, Firebase, Github.
 3. Web scraping API core and tools, 
@@ -55,10 +63,16 @@ Technologies: Elasticsearch, Python, Flask, Docker, NoSQL, Scrapy, Selenium, Fir
 
 ## General Architecture:
 
-![CH_ARCHITECTURE](./images/CH_ARCHITECTURE.jpg)
+<a href="./images/CH_ARCHITECTURE.jpg">
+<img src="./images/CH_ARCHITECTURE.jpg" alt="click to enlarge"/>
+<!-- ![CH_ARCHITECTURE](./images/CH_ARCHITECTURE.jpg) -->
+</a>
 
 ## VM_CHSCRAPERAPI event triggers architecture:
 
-![VM_CHSCRAPERAPI](./images/VM_CHSCRAPERAPI.jpg)
+<a href="./images/VM_CHSCRAPERAPI.jpg">
+<img src="./images/VM_CHSCRAPERAPI.jpg" alt="click to enlarge"/>
+<!-- ![VM_CHSCRAPERAPI](./images/VM_CHSCRAPERAPI.jpg) -->
+</a>
 
 

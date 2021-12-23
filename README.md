@@ -21,9 +21,23 @@ _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
     _Technologies_: C++, Cmake, CUDA, OpenGL, OpenCV, Nvidia VRWorks.
 
 
+**StuffILearned - Personal Software development Notes** - [project details](http://181.126.83.235/) <br>
+    _Description_: A personal blog to keep track of new technologies and tricks used in software development. Used to have easy access to common software development notes. **To be replaced soon.** \
+    _Website_: [http://181.126.83.235/](http://181.126.83.235/) \
+    _Technologies_: PHP, Wordpress, MySQL, html, css.
 
-**StuffILearned - Personal Software development Notes**  \
-    _Description_: A personal blog to keep track of new technologies and tricks used in software development. Used to have easy access to common software development notes. **to be updated soon to a new mayor version** \
-    _Website_: http://181.126.83.235/ \
-    _Technologies_: PHP, Wordpress, MySQL.
+
+**Matchmaking** - [project details](https://github.com/manolosolalinde/matchmaking) <br>
+    _Description_: A flask web application to balance team players for video games. \
+    _Technologies_: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
+    
+**A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows** - [short summary](https://github.com/manolosolalinde/FEM-Multiphase/blob/master/documentation/NSOLALINDE_EBECEM_v4.pdf) <br>
+    _Description_: **Master Thesis**. A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows. \
+    _Github_: [https://github.com/manolosolalinde/FEM-Multiphase](https://github.com/manolosolalinde/FEM-Multiphase) \
+    _Dissertation_: [http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf](http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf) \
+    _Technologies_: C++, Matlab, Libmesh.
+
+
+**SPR System - Technical Secretary of Planing - Paraguayan Gonverment** - [project details](./projects/spr.md) <br>
+    _Description_: Design specifications and UI/UX of the [SPR system](https://spr.stp.gov.py/tablero/public/geografico4.jsp) of the Technical Secretary of Planing of the paraguayan government. \
 
