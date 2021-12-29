@@ -1,10 +1,18 @@
+---
+title: Dual Fisheye to VR180 - Nvidia GPU Video Stitcher
+description: A tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC,  NVENC.
+image_url: ./images/cuda_stitcher_03.png
+date: 2020-09-01
+order: 2
+---
+
 # DUAL FISHEYE TO VR180 - NVIDIA GPU VIDEO STITCHER
 
 This tool converts dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC. 
 
-Currently, Nvidia provides a high-level SDK for stitching multiple camera feeds (at least 4) into monoscopic and stereoscopic panoramas. However there is no out-of-the-box support for stitching dual camera feeds into a single panorama (VR360 only).
+Currently, Nvidia provides a high-level SDK for stitching multiple camera feeds (at least 4) into monoscopic and stereoscopic panoramas. However, there is no out-of-the-box support for stitching dual-camera feeds into a single panorama (VR360 only).
 
-On top of these high-level SDKs, NVIDIA provides low-level SDKs for decoding, stitching and encoding video streams in predefined formats. 
+On top of these high-level SDKs, NVIDIA provides low-level SDKs for decoding, stitching, and encoding video streams in predefined formats. 
 
 In this project, we take advantage of these low-level SDKs to achieve the same results as the high-level SDKs with dual cameras.
 
@@ -15,7 +23,7 @@ Results achieved were x100+ times faster in terms of frame rates, than the ones 
 Youtube Link: [https://www.youtube.com/watch?v=gHSUaYhKRxA](https://www.youtube.com/watch?v=gHSUaYhKRxA)
 
  <a href="./images/cuda_stitcher.jpg">
-<img src="./images/cuda_stitcher.jpg" alt="Click for youtube video" style="width:400px;"/>
+<img src="./images/cuda_stitcher.jpg" alt="Click for youtube video" style="width:100%;"/>
 </a>
 
 ## Output summary
