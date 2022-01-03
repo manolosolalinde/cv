@@ -4,7 +4,7 @@ description: Developed in coordination with the Hochschule Stralsund as a base t
 image_url: ./images/enertrag.png
 date: 2007-05-01
 order: 8
-local_files: `N:\COMPU VIEJA\Documentos 2009\Matemática\Optimizacion\Enertrag Project Opt`
+local_files: N:\COMPU VIEJA\Documentos 2009\Matemática\Optimizacion\Enertrag Project Opt
 ---
 
 # Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool
