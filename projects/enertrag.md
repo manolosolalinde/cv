@@ -1,6 +1,6 @@
 ---
 title: Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool
-description: Developed in coordination with the Hochschule Stralsund as a base tool for simulations in the field of Wind Power-Hydrogen integrated systems for the Enertrag company
+description: Base tool for simulations in the field of Wind Power-Hydrogen integrated energy systems.
 image_url: ./images/enertrag.png
 date: 2007-05-01
 order: 8
