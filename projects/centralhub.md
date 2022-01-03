@@ -1,7 +1,7 @@
 ---
 title: Centralhub - E-commerce Search Engine
 description: A search engine platform based on web scraping of local e-commerce sites.
-image_url: ./images/CH_ARCHITECTURE.jpg
+image_url: ./images/centralhub_example2.png
 image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/CH_ARCHITECTURE.jpg
 date: 2021-12-01
 order: 1
