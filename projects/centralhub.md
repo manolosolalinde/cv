@@ -1,5 +1,5 @@
 ---
-title: Centralhub - E-commerce Search Engine
+title: Centralhub Search Engine
 description: A search engine platform based on web scraping of local e-commerce sites.
 image_url: ./images/centralhub_example2.png
 image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/CH_ARCHITECTURE.jpg
@@ -21,24 +21,24 @@ This platform consists of 5 different sub-projects:
     - Project Id: ch_se
     - Project website: [https://www.centralhub.com.py/](https://www.centralhub.com.py/)
     - Description: Search Engine Frontend visible to the public (the final result).
-    - Technologies: React, Redux, Nextjs, Firebase, Git.
+    - **Technologies**: React, Redux, Nextjs, Firebase, Git.
 2. E-commerce Search Engine Admin Backend, 
     - Project Id: ch_scraper_gui
     - Project website: [https://centralhub-scrape-gui.web.app/](https://centralhub-scrape-gui.web.app/)
     - Description: Search Engine Admin Backend visible to the admin.
-    - Technologies: Nodejs, React, Redux, Firebase, Github.
+    - **Technologies**: Nodejs, React, Redux, Firebase, Github.
 3. Web scraping API core and tools, 
     - Project Id: ch_scraper_api
     - Description: The core scraping module, used to run tests and background tasks using configuration files.
-    - Technologies: Python, Flask, Docker, NoSQL, Firebase, Google Cloud Platform, Git.
+    - **Technologies**: Python, Flask, Docker, NoSQL, Firebase, Google Cloud Platform, Git.
 4. Web scraping automation and synchronization tools, 
     - Project Id: ch_scraper_functions
     - Description: A set of tools to update databases, synchronize data between different services, and trigger events based on specific conditions.
-    - Technologies: Nodejs, PubSub, Firebase Functions, Cloud Scheduler, Google Cloud Platform, Git, Task Scheduler, Compute Engine API.
+    - **Technologies**: Nodejs, PubSub, Firebase Functions, Cloud Scheduler, Google Cloud Platform, Git, Task Scheduler, Compute Engine API.
 5. Devops, Search Engine Implementation, Architecture, and Integrations.
     - Project Id: ch_devops
     - Description: A set of documents, scripts, and directives used to set up services, assuring that everything works as expected.
-    - Technologies: Docker, Pytest, Jest, Firestore, Elasticsearch, Google Cloud Platform.
+    - **Technologies**: Docker, Pytest, Jest, Firestore, Elasticsearch, Google Cloud Platform.
 
 ## How it works:
 
