@@ -5,6 +5,7 @@ image_url: ./images/centralhub_example2.png
 image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/CH_ARCHITECTURE.jpg
 date: 2021-12-01
 order: 1
+technologies: Elasticsearch, Python, Flask, Docker, NoSQL, Scrapy, Selenium, Firebase, Git, JavaScript, React, Redux, Nodejs, Google Cloud Platform, Jest, Pytest.
 ---
 
 
