@@ -4,6 +4,8 @@ description: A simple flask application to balance team players for video game m
 image_url: ./images/matchmaking.png
 date: 2018-12-12
 order: 4
+technologies: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
+category: Full Stack Development
 ---
 
 # MatchMaking
@@ -14,20 +16,19 @@ A simple flask application to balance team players for video game matches.
 
 # Steps to run:
 
-0) Clone the repo:
+1. Clone the repo:
 ```bash
 git clone https://github.com/manolosolalinde/matchmaking.git
 ```
 
-1) Start a postgresql server
+2. Start a postgresql server
 
-2) Create a .env file with the following content
-
+3. Create a .env file with the following content
 ```.env
 DATABASE_URL="postgres://postgres:<password>@<databaseurl>:5432/mydatabase"
 ```
 
-3) Run:
+4. Run:
 ```bash
 python create.py
 python import.py

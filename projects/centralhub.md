@@ -6,6 +6,7 @@ image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/proj
 date: 2021-12-01
 order: 1
 technologies: Elasticsearch, Python, Flask, Docker, NoSQL, Scrapy, Selenium, Firebase, Git, JavaScript, React, Redux, Nodejs, Google Cloud Platform, Jest, Pytest.
+category: Full Stack Development
 ---
 
 

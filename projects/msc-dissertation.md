@@ -5,4 +5,6 @@ date: 2011-02-01
 image_url: ./images/msc-dissertation.png
 order: 6
 redirect_link: https://github.com/manolosolalinde/FEM-Multiphase
+technologies: C++, Matlab, Wolfram Mathematica, Libmesh Finite Elements Library.
+category: Scientific Computing
 ---

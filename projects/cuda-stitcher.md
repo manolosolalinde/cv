@@ -4,6 +4,8 @@ description: A tool for converting dual fisheye camera videos to equirectangular
 image_url: ./images/cuda_stitcher_03.png
 date: 2020-09-01
 order: 2
+technologies: C++, Cmake, CUDA, OpenGL, OpenCV, Nvidia VRWorks.
+category: Backend Development
 ---
 
 # DUAL FISHEYE TO VR180 - NVIDIA GPU VIDEO STITCHER
