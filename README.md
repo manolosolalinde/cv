@@ -2,7 +2,7 @@
 
 _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
 
-[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) 
+[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
 
 ## 💻 Software Development Experience
 
@@ -111,7 +111,6 @@ transfer.
 
 
 ## 💻 Informal Software Engineering Education
-<br>
 
 **Build a Backend REST API with Python & Django - Advanced** @ Udemy - [Course details](https://www.udemy.com/course/django-python-advanced/) <br>
 Course duration: 8hs. Online Course.
@@ -149,7 +148,7 @@ Duration: 15hs. Online Course.
 <br>
 
 
-### <u>Introduction Courses</u>
+### Introduction Courses
 
 Most of these where used as technology introduction material before diving into deeper documentation.
 <br>
@@ -177,6 +176,8 @@ Most of these where used as technology introduction material before diving into 
  **Docker** - freeCodeCamp.org - [Course details](https://www.youtube.com/watch?v=fqMOX6JJhGo) <br>
  
  **Docker Compose** - Jake Wright - [Course details](https://www.youtube.com/watch?v=Qw9zlE3t8Ko) <br>
+
+ <br>
 
 
 ## 🦾 Electromechanical Engineering experience
