@@ -1,4 +1,4 @@
-# Nestor Solalinde
+# Manuel Solalinde
 
 _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
 
