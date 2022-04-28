@@ -26,6 +26,27 @@ A tool for converting dual fisheye camera videos to equirectangular stitched vid
  - **_Technologies used_**: C++, Cmake, CUDA, OpenGL, OpenCV, Nvidia VRWorks.
 <br><br>
 
+**Artur Platform - Predimensioning of hydraulic turbine structural components** - [project details](https://www.impsa.com/en/products/hydro/kaplan-turbines/) <br>
+A tool for predimensioning of hydraulic turbine structural components.
+ - Lead developer for the ARTUR platform, used for the calculation and pre-dimensioning of hydraulic turbine structural component elements.
+ - Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements.
+ - _Employer_: [IMPSA](https://www.impsa.com/en/contact-us/) - [Juan De Miguel](https://www.linkedin.com/in/juan-ram%C3%B3n-de-miguel-198ab51ba/) 
+ - **_Technologies used_**: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
+<br><br>
+
+**Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool** - [project details](./projects/enertrag.md) <br>
+A tool for simulation of wind energy systems using hydrogen and biogas.
+ - Developed in coordination with the Hochschule Stralsund as a base tool for simulations in the field of Wind Power - Hydrogen integrated systems for the [ENERTRAG](https://enertrag.com/) company.
+ - _Employer_: [Hochschule Stralsund](https://www.hochschule-stralsund.de/) - [Prof. Dr. rer. nat. Jochen Lehmann](mailto:jochen.lehmann@fh-stralsund.de) - [Prof. Dr.-Ing. Thomas Luschtinetz](https://www.hochschule-stralsund.de/host/fakultaeten/elektrotechnik-und-informatik/personalseiten/luschtinetz-thomas/#825099_blank)
+ - **_Technologies used_**: Matlab, Matlab Genetic Algorithms Toolbox.
+<br><br>
+
+**SPR System - Technical Secretary of Planning - Paraguayan Government** - [project details](./projects/stp-fao.md) <br>
+Design specifications and UI/UX for the [SPR system](https://spr.stp.gov.py/tablero/public/geografico4.jsp) - Technical Secretary of Planning - Paraguayan Government ([STP](https://www.stp.gov.py/v1/)).
+ - Worked in a cross-functional, agile team to rebuild the [SPR system](https://www.stp.gov.py/v1/instrumentos-spr/)
+ - Assistance with information architecture and UX writing for the web app
+ - _Client:_ [STP-Paraguay](https://www.stp.gov.py/v1/) 
+<br><br>
 
 **StuffILearned - Personal Software development Notes** - [project details](http://181.126.83.235/) <br>
 A software development personal blog to keep track of new technologies, courses and personal notes. **To be replaced soon.**
@@ -41,13 +62,6 @@ A simple flask web application to balance team players for video games.
  - **_Technologies used_**: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
 <br><br>
  
-    
-**SPR System - Technical Secretary of Planning - Paraguayan Government** - [project details](./projects/stp-fao.md) <br>
-Design specifications and UI/UX for the [SPR system](https://spr.stp.gov.py/tablero/public/geografico4.jsp) - Technical Secretary of Planning - Paraguayan Government ([STP](https://www.stp.gov.py/v1/)).
- - Worked in a cross-functional, agile team to rebuild the [SPR system](https://www.stp.gov.py/v1/instrumentos-spr/)
- - Assistance with information architecture and UX writing for the web app
- - _Client:_ [STP-Paraguay](https://www.stp.gov.py/v1/) 
-<br><br>
 
 **A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows** - [short summary](https://github.com/manolosolalinde/FEM-Multiphase/blob/master/documentation/NSOLALINDE_EBECEM_v4.pdf) <br>
 A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows.
@@ -57,20 +71,6 @@ A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows
  - **_Technologies used_**: C++, Matlab, Wolfram Mathematica, Libmesh Finite Elements Library.
 <br><br>
 
-**Artur Platform - Predimensioning of hydraulic turbine structural components** - [project details](https://www.impsa.com/en/products/hydro/kaplan-turbines/) <br>
-A tool for predimensioning of hydraulic turbine structural components.
- - Lead developer for the ARTUR platform, used for the calculation and pre-dimensioning of hydraulic turbine structural component elements.
- - Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements.
- - _Employer_: [IMPSA](https://www.impsa.com/en/contact-us/) - [Juan De Miguel](https://www.linkedin.com/in/juan-ram%C3%B3n-de-miguel-198ab51ba/) 
- - **_Technologies used_**: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
-<br><br>
-
-**Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool** - [project details](./projects/enertrag.md) <br>
-A tool for simulation of wind energy systems using hydrogen and biogas.
- - Developed in coordination with the Hochschule Stralsund as a base tool for simulations in the field of Wind Power - Hydrogen integrated systems for the [ENERTRAG](https://enertrag.com/) company.
- - _Employer_: [Hochschule Stralsund](https://www.hochschule-stralsund.de/) - [Prof. Dr. rer. nat. Jochen Lehmann](mailto:jochen.lehmann@fh-stralsund.de) - [Prof. Dr.-Ing. Thomas Luschtinetz](https://www.hochschule-stralsund.de/host/fakultaeten/elektrotechnik-und-informatik/personalseiten/luschtinetz-thomas/#825099_blank)
- - **_Technologies used_**: Matlab, Matlab Genetic Algorithms Toolbox.
-<br><br>
 
 ## 👩🏼‍🎓 EDUCATION
 
