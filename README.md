@@ -6,7 +6,7 @@ _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
 
 ## 💻 Software Development Experience
 
-**Surveillance Dashboard Application - BKV Corporation** - [BKV Website](https://bkv.com)
+**Surveillance Dashboard Application - BKV Corporation** - [BKV Website](https://bkv.com) <br>
 A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes.
  - _Role_: Lead Software Development Engineer
  - _Duration_: april 2022 to present
