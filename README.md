@@ -6,6 +6,20 @@ _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
 
 ## 💻 Software Development Experience
 
+**Surveillance Dashboard Application - BKV Corporation** - [BKV Website](https://bkv.com)
+A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes.
+ - _Role_: Lead Software Development Engineer
+ - _Duration_: april 2022 to present
+ - _Description_: A set of applications to visualize, analyze and process data. Subprojects:
+        1. Single well frontend application. Adaptable resolution fast visualization of well data.
+        2. Multi well frontend application. Adaptable resolution fast visualizaton of multiple wells.
+        3. Daily and Engineering Plots frontend application. Visualization and analisys of daily data and engineering plots.
+        4. Data processing backend. Built on python using FastAPI. Data processing is optimized for max performance.
+        5. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi).
+        6. Comments library used on each frontend application.
+        7. Map and text input functionality for well selection. (used on each frontend application)
+ - **_Technologies used_**: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Platform (Lambda, App Runner, S3, EC2, VPC setup, RDS, Route 53). Testing: Cypress (frontend), Pytest (backend). 
+
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
  - _Role_: Full Stack Developer
