@@ -2,23 +2,98 @@
 
 _Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
 
-[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
+[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github1](https://github.com/manuelsolalindebkv/) / [Github2](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
 
-## 💻 Software Development Experience
+## 🏢 Work Experience
 
-**Surveillance Dashboard Application - BKV Corporation** - [BKV Website](https://bkv.com) <br>
-A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes.
- - _Role_: Lead Software Development Engineer
+<!-- Role: Senior Software Engineer
+Date: may/2022 - present
+Description:
+- Built a set of web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
+- Significantly enhanced the efficiency of existing data processing algorithms, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
+- Developed templates and libraries, streamlining the process of creating new applications and reusing existing components.
+- Architected and implemented AWS Infrastructure Solutions. Spearheaded the development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
+- Technologies used: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend). -->
+
+**Senior Software Engineer**
+[BKV Corporation](https://www.bkvcorp.com) - May 2022 - present <br>
+ - Built a set of web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
+ - Significantly enhanced the efficiency of existing data processing algorithms, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
+ - Developed templates and libraries, streamlining the process of creating new applications and reusing existing components.
+ - Architected and implemented AWS Infrastructure Solutions. Spearheaded the development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
+ - Technologies: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, Nodejs, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
+
+ <!-- Role: Senior Software Engineer
+Date: may/2022 - present
+Description:
+Working with BKV Corporation on software development applications and data science projects. 
+Creating surveillance dashboards and engineering tools. Engaging in the analysis and analytics of extensive datasets. -->
+
+**Senior Software Engineer**
+[BairesDev](https://www.bairesdev.com/) - May 2022 - present <br>
+ - Involved in development of web applications and data science projects at BKV Corporation, focusing on creating intuitive surveillance dashboards and engineering tools. 
+ - My role includes analyzing and interpreting extensive datasets, employing advanced methods to extract actionable insights
+
+<!-- SCE S.A. -->
+<!-- - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites. 
+- Developer of a tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC.
+- Developer of a management system using Excel VBA and SQL.
+- Backend developer of ecommerce sites
+- Worked in a cross-functional, agile team to rebuild the SPR system for the Paraguayan National Secretary of Planning.
+- Assistance with information architecture and UX writing for webapps -->
+
+**Software Developer**
+Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
+ - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites. [Web Site](https://centralhub.com.py)
+- Developer of a tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC. 
+- Developer of a management system using Excel VBA and SQL.
+- Backend developer of ecommerce sites.
+- Worked in a cross-functional, agile team to rebuild the SPR system for the Paraguayan National Secretary of Planning.
+- Assistance with information architecture and UX writing for webapps.
+
+<!-- 2011 - Mar 2013 · 2 yrs 3 mos2011 - Mar 2013 · 2 yrs 3 mos
+Main developer for the ARTUR platform (C++ Language, VBA), used for the calculation and pre-dimensioning of hydraulic turbine structural component elements. Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements. -->
+
+**Software Developer - Engineer**
+[IMPSA](https://www.impsa.com/) - Mendoza, Argentina - Jan 2011 - Jul 2013 <br>
+ - Lead Developer of the ARTUR platform (C++ Language), used for the calculation and pre-dimensioning of hydraulic turbine structural component elements. 
+ - Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements.
+
+
+## 💻 Project Experience
+
+**Gas Targets Application** - [BKV Corporation](https://bkvcorp.com) <br>
+Web application used to evaluate and set gas production targets for gas wells. Allow users to review state of wells and run parallel tasks to process data and store results in a database.
+ - _Role_: Software Development Engineer
  - _Duration_: april 2022 to present
- - _Description_: A set of applications to visualize, analyze and process data. Subprojects:
-        1. Single well frontend application. Adaptable resolution fast visualization of well data.
-        2. Multi well frontend application. Adaptable resolution fast visualizaton of multiple wells.
-        3. Daily and Engineering Plots frontend application. Visualization and analisys of daily data and engineering plots.
-        4. Data processing backend. Built on python using FastAPI. Data processing is optimized for max performance.
-        5. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi).
-        6. Comments library used on each frontend application.
-        7. Map and text input functionality for well selection. (used on each frontend application)
- - **_Technologies used_**: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Platform (Lambda, App Runner, S3, EC2, VPC setup, RDS, Route 53). Testing: Cypress (frontend), Pytest (backend). 
+ - _Responsabilities_: 
+        1. Frontend development (React, Bootstrap, Redux, Plotly.js, jest)
+        2. Backend development and testing (Python, Fastapi, Postgres, SQL, pytest)
+        3. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, SQS, Lambda, RDS, App Runner).
+        4. Lambda functions for parallel data processing and data storage.
+        5. CI/CD pipeline implementation (Github Actions).
+- _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Pytest (backend).
+
+
+**Surveillance Dashboard Application** - [project details](./projects/bkv_sd.md) <br>
+A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes. Comprised of 3 sub applications: Single well, Multi well, Daily and Engineering Plots.
+ - _Role_: Software Development Engineer
+ - _Duration_: april 2022 to present
+ - _Responsabilities_: 
+       1. Frontend development and testing (React, Bootstrap, Redux, Plotly.js, Mapbox, jest)
+       2. Backend development and testing (Python, Fastapi, Postgres, SQL, pytest, Docker)
+       3. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, Lambda, RDS, App Runner, S3, VPC, Route 53).
+       4. Lambda functions for cron jobs.
+       5. CI/CD pipeline implementation (Github Actions).
+ - _Key Features_:
+       - Azure AD authentication.
+       - Support user comments on time series data.
+       - Automatic data resampling for time series data.
+       - Selection and filter of wells from lists or maps.
+       - Multi well selection and data comparison.
+       - Can add smoothing and indicators to time series data.
+ - _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
+
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
@@ -124,7 +199,7 @@ transfer.
 <br><br>
 
 
-## 💻 Informal Software Engineering Education
+## 📚 Informal Software Engineering Education
 
 **Build a Backend REST API with Python & Django - Advanced** @ Udemy - [Course details](https://www.udemy.com/course/django-python-advanced/) <br>
 Course duration: 8hs. Online Course.
