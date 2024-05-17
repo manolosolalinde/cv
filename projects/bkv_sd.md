@@ -19,7 +19,14 @@ A set of web applications to visualize, analyze and process real time data from 
 ## Screenshots
 
 #### Single Well Application
-![Single Well](./images/bkv/single.png)
+
+<a href="./images/bkv/single.png">
+<img src="./images/bkv/single.png" alt="click to enlarge"/>
+</a>
+
 
 #### Daily Data Application
-![Daily](./images/bkv/daily.png)
+
+<a href="./images/bkv/daily.png">
+<img src="./images/bkv/daily.png" alt="click to enlarge"/>
+</a>
