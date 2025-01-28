@@ -1,0 +1,42 @@
+@media print
+{
+p strong {page-break-before:auto}
+}
+
+
+.print-break {
+    display: none; /* Hidden by default */
+  }
+
+@media print {
+.print-break {
+    display: block; /* Show only during printing */
+    height: 0; /* Avoid extra height */
+    margin: 0;
+    padding: 0;
+    page-break-before: always; /* Optionally add a page break here */
+}
+}
+
+/* dont print <header> tag */
+
+@media print {
+    header {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media print, screen and (max-width: 960px) { div.wrapper { width: auto; margin: 0; }
+  header, section, footer { float: none; position: static; width: auto; }
+  header { padding-right: 320px; }
+  section { border: none !important; padding: 20px 0; margin: 0 0 20px; }
+  header a small { display: inline; }
+  header ul { position: absolute; right: 50px; top: 52px; } }
+
+p, li > ul {
+    margin: 0 0 0px !important;
+}

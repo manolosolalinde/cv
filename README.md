@@ -1,8 +1,10 @@
 # Manuel Solalinde
 
-_Software Developer - MSc. Applied Mathematics - Electromechanical Engineer_
+_Software Developer - MSc. Applied Mathematics - Data Scientist_ <br><br>
 
 [Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github1](https://github.com/manuelsolalindebkv/) / [Github2](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
+
+<br><br>
 
 ## 🏢 Work Experience
 
@@ -15,13 +17,15 @@ Description:
 - Architected and implemented AWS Infrastructure Solutions. Spearheaded the development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
 - Technologies used: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend). -->
 
-**Senior Software Engineer**
-[BKV Corporation](https://www.bkvcorp.com) - May 2022 - present <br>
- - Built a set of web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
- - Significantly enhanced the efficiency of existing data processing algorithms, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
+**Senior Software Engineer** - [BKV Corporation](https://www.bkvcorp.com) - May 2022 - present <br>
+ - Designed and developed machine learning applications for optimization of **artificial lift systems**.
+ - Built web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
+ - Significantly enhanced the efficiency of existing **data processing algorithms**, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
  - Developed templates and libraries, streamlining the process of creating new applications and reusing existing components.
- - Architected and implemented AWS Infrastructure Solutions. Spearheaded the development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
- - Technologies: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, Nodejs, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
+ - Architected and implemented AWS Infrastructure Solutions. Development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced **infrastructure as code** techniques with pulumi.
+ - Technologies: Python, Javascript, Fastapi, React, Azure AD, Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, Nodejs, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
+ - Data Science libraries: scikit-learn, pandas, numpy, plotly, tensorflow, keras, streamlit.
+
 
  <!-- Role: Senior Software Engineer
 Date: may/2022 - present
@@ -29,8 +33,7 @@ Description:
 Working with BKV Corporation on software development applications and data science projects. 
 Creating surveillance dashboards and engineering tools. Engaging in the analysis and analytics of extensive datasets. -->
 
-**Senior Software Engineer**
-[BairesDev](https://www.bairesdev.com/) - May 2022 - present <br>
+**Senior Software Engineer** - [BairesDev](https://www.bairesdev.com/) - May 2022 - present <br>
  - Involved in development of web applications and data science projects at BKV Corporation, focusing on creating intuitive surveillance dashboards and engineering tools. 
  - My role includes analyzing and interpreting extensive datasets, employing advanced methods to extract actionable insights
 
@@ -42,8 +45,9 @@ Creating surveillance dashboards and engineering tools. Engaging in the analysis
 - Worked in a cross-functional, agile team to rebuild the SPR system for the Paraguayan National Secretary of Planning.
 - Assistance with information architecture and UX writing for webapps -->
 
-**Software Developer**
-Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
+ <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
+
+**Software Developer** - Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
  - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites. [Web Site](https://centralhub.com.py)
 - Developer of a tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC. 
 - Developer of a management system using Excel VBA and SQL.
@@ -54,24 +58,36 @@ Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
 <!-- 2011 - Mar 2013 · 2 yrs 3 mos2011 - Mar 2013 · 2 yrs 3 mos
 Main developer for the ARTUR platform (C++ Language, VBA), used for the calculation and pre-dimensioning of hydraulic turbine structural component elements. Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements. -->
 
-**Software Developer - Engineer**
-[IMPSA](https://www.impsa.com/) - Mendoza, Argentina - Jan 2011 - Jul 2013 <br>
+**Software Developer - Engineer** - [IMPSA](https://www.impsa.com/) - Mendoza, Argentina - Jan 2011 - Jul 2013 <br>
  - Lead Developer of the ARTUR platform (C++ Language), used for the calculation and pre-dimensioning of hydraulic turbine structural component elements. 
  - Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements.
 
+<br>
 
-## 💻 Project Experience
+## 💻 Projects
+
+**General Oil and Gas Applications** - [BKV Corporation](https://bkvcorp.com) <br>
+Set of applications for optimization of artificial lift systems. 
+ - _Applications_:
+      - Plunger Optimizations plots, analysis, and reports.
+      - Gas Injection Estimator.
+      - CO2 Injection runtime history app.
+      - Well communication tool.
+      - LLM application for the detection of punch holes in tubing and casing.
+      - Reservoir Pressure Propagation calculator.
+ - _Technologies_: Python, Streamlit, pandas, numpy, scikit-learn, plotly, tensorflow, keras.
+
 
 **Gas Targets Application** - [BKV Corporation](https://bkvcorp.com) <br>
 Web application used to evaluate and set gas production targets for gas wells. Allow users to review state of wells and run parallel tasks to process data and store results in a database.
  - _Role_: Software Development Engineer
  - _Duration_: april 2022 to present
  - _Responsabilities_: 
-        1. Frontend development (React, Bootstrap, Redux, Plotly.js, jest)
-        2. Backend development and testing (Python, Fastapi, Postgres, SQL, pytest)
-        3. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, SQS, Lambda, RDS, App Runner).
-        4. Lambda functions for parallel data processing and data storage.
-        5. CI/CD pipeline implementation (Github Actions).
+      - Frontend development (React, Bootstrap, Redux, Plotly.js, jest)
+      - Backend development and testing (Python, Fastapi, Postgres, SQL, pytest)
+      - AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, SQS, Lambda, RDS, App Runner).
+      - Lambda functions for parallel data processing and data storage.
+      - CI/CD pipeline implementation (Github Actions).
 - _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Pytest (backend).
 
 
@@ -80,11 +96,11 @@ A set of web applications to visualize, analyze and process real time data from 
  - _Role_: Software Development Engineer
  - _Duration_: april 2022 to present
  - _Responsabilities_: 
-       1. Frontend development and testing (React, Bootstrap, Redux, Plotly.js, Mapbox, jest)
-       2. Backend development and testing (Python, Fastapi, Postgres, SQL, pytest, Docker)
-       3. AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, Lambda, RDS, App Runner, S3, VPC, Route 53).
-       4. Lambda functions for cron jobs.
-       5. CI/CD pipeline implementation (Github Actions).
+      - Frontend development and testing (React, Bootstrap, Redux, Plotly.js, Mapbox, jest)
+      - Backend development and testing (Python, Fastapi, Postgres, SQL, pytest, Docker)
+      - AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, Lambda, RDS, App Runner, S3, VPC, Route 53).
+      - Lambda functions for cron jobs.
+      - CI/CD pipeline implementation (Github Actions).
  - _Key Features_:
        - Azure AD authentication.
        - Support user comments on time series data.
@@ -94,6 +110,7 @@ A set of web applications to visualize, analyze and process real time data from 
        - Can add smoothing and indicators to time series data.
  - _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
 
+<span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
@@ -123,6 +140,8 @@ A tool for predimensioning of hydraulic turbine structural components.
  - **_Technologies used_**: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
 <br><br>
 
+<span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
+
 **Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool** - [project details](./projects/enertrag.md) <br>
 A tool for simulation of wind energy systems using hydrogen and biogas.
  - Developed in coordination with the Hochschule Stralsund as a base tool for simulations in the field of Wind Power - Hydrogen integrated systems for the [ENERTRAG](https://enertrag.com/) company.
@@ -151,6 +170,7 @@ A simple flask web application to balance team players for video games.
  - **_Technologies used_**: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
 <br><br>
  
+ <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
 
 **A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows** - [short summary](https://github.com/manolosolalinde/FEM-Multiphase/blob/master/documentation/NSOLALINDE_EBECEM_v4.pdf) <br>
 A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows.
@@ -201,39 +221,51 @@ transfer.
 
 ## 📚 Informal Software Engineering Education
 
-**Build a Backend REST API with Python & Django - Advanced** @ Udemy - [Course details](https://www.udemy.com/course/django-python-advanced/) <br>
-Course duration: 8hs. Online Course.
 
-**Complete Guide to ElasticSearch** @ Udemy - [Course details](https://www.udemy.com/complete-guide-to-elasticsearch/) <br>
-Course duration: 12hs. Online Course.
-<br>
+**Build a Backend REST API with Python & Django - Advanced**
+- Udemy - [Course details](https://www.udemy.com/course/django-python-advanced/) 
+- Course duration: 8hs. Online Course.
 
-**Intro to Parallel Programming** @ Coursera – Udacity - [Course details](https://developer.nvidia.com/udacity-cs344-intro-parallel-programming) <br>
-Course duration: 21hs. Online Course.
- 
-**Machine Learning** @ Coursera – Standford University - [Course details](https://www.coursera.org/learn/machine-learning) <br>
-Course duration: 55hs. Online Course.
+**Complete Guide to ElasticSearch**
+- Udemy - [Course details](https://www.udemy.com/complete-guide-to-elasticsearch/) 
+- Course duration: 12hs. Online Course.
 
-**CS50's Web Programming with Python and JavaScript** @ edX – Harvard University - [Course details](https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript) <br>
-Course duration: 90hs. Online Course.
- 
-**HTML, CSS, and Javascript for Web Developers** @ Coursera – Johns Hopkins University - [Course details](https://www.coursera.org/learn/html-css-and-javascript-for-web-developers) <br>
-Course duration: 33hs. Online Course.
- 
-**Computer Vision Intro™ OpenCV4 in Python with Deep Learning** @ Udemy - [Course details](https://www.udemy.com/master-computer-vision-with-opencv-in-python/ ) <br>
-Course duration: 10hs. Online Course.
- 
-**Convolutional Neural Networks for Visual Recognition** @ Standford University - [Course details](http://cs231n.stanford.edu/index.html) <br>
-Course duration: 34hs. Online Course.
- 
-**Complete Guide to TensorFlow for Deep Learning with Python** @ Udemy - [Course details](https://www.udemy.com/complete-guide-to-tensorflow-for-deep-learning-with-python/ ) <br>
-Course duration: 14hs. Online Course.
- 
-**OCW 6001 Introduction to Computer Science and Programming in Python** @ MIT OCW - [Course details](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/) <br>
-Course duration: 12hs. Online Course.
- 
-**C++** @ TheChernoProject/Youtube - [Course details](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) <br>
-Duration: 15hs. Online Course.
+**Intro to Parallel Programming**
+- Coursera – Udacity - [Course details](https://developer.nvidia.com/udacity-cs344-intro-parallel-programming) 
+- Course duration: 21hs. Online Course.
+
+**Machine Learning**
+- Coursera – Standford University - [Course details](https://www.coursera.org/learn/machine-learning) 
+- Course duration: 55hs. Online Course.
+
+**CS50's Web Programming with Python and JavaScript**
+- edX – Harvard University - [Course details](https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript) 
+- Course duration: 90hs. Online Course.
+
+**HTML, CSS, and Javascript for Web Developers**
+- Coursera – Johns Hopkins University - [Course details](https://www.coursera.org/learn/html-css-and-javascript-for-web-developers) 
+- Course duration: 33hs. Online Course.
+
+**Computer Vision Intro™ OpenCV4 in Python with Deep Learning**
+- Udemy - [Course details](https://www.udemy.com/master-computer-vision-with-opencv-in-python/) 
+- Course duration: 10hs. Online Course.
+
+**Convolutional Neural Networks for Visual Recognition**
+- Standford University - [Course details](http://cs231n.stanford.edu/index.html) 
+- Course duration: 34hs. Online Course.
+
+**Complete Guide to TensorFlow for Deep Learning with Python**
+- Udemy - [Course details](https://www.udemy.com/complete-guide-to-tensorflow-for-deep-learning-with-python/) 
+- Course duration: 14hs. Online Course.
+
+**OCW 6001 Introduction to Computer Science and Programming in Python**
+- MIT OCW - [Course details](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/) 
+- Course duration: 12hs. Online Course.
+
+**C++**
+- TheChernoProject/Youtube - [Course details](https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb) 
+- Duration: 15hs. Online Course.
+
 <br>
 
 

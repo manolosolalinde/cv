@@ -12,7 +12,6 @@ category: Full Stack Development
 
 # Centralhub - E-commerce Search Engine
 
-Website: [www.centralhub.com.py](https://www.centralhub.com.py) <br>
 Developer: Nestor Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
 A search engine platform for specialized web scraping of local e-commerce sites. 
@@ -21,7 +20,6 @@ This platform consists of 5 different sub-projects:
 
 1. An E-commerce Search Engine Frontend, 
     - Project Id: ch_se
-    - Project website: [https://www.centralhub.com.py/](https://www.centralhub.com.py/)
     - Description: Search Engine Frontend visible to the public (the final result).
     - **Technologies**: React, Redux, Nextjs, Firebase, Git.
 2. E-commerce Search Engine Admin Backend, 
