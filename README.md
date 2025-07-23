@@ -18,11 +18,12 @@ Description:
 - Technologies used: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend). -->
 
 **Senior Software Engineer** - [BKV Corporation](https://www.bkvcorp.com) - May 2022 - present <br>
- - Designed and developed machine learning applications for optimization of **artificial lift systems**.
+ - Designed and developed machine learning applications for optimization of artificial lift systems.
+ - Developed AI-powered applications leveraging large language models for event detection and data structuring in gas well operations.
  - Built web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
- - Significantly enhanced the efficiency of existing **data processing algorithms**, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
+ - Significantly enhanced the efficiency of existing data processing algorithms, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
  - Developed templates and libraries, streamlining the process of creating new applications and reusing existing components.
- - Architected and implemented AWS Infrastructure Solutions. Development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced **infrastructure as code** techniques with pulumi.
+ - Architected and implemented AWS Infrastructure Solutions. Development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
  - Technologies: Python, Javascript, Fastapi, React, Azure AD, Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, Nodejs, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
  - Data Science libraries: scikit-learn, pandas, numpy, plotly, tensorflow, keras, streamlit.
 
@@ -48,7 +49,7 @@ Creating surveillance dashboards and engineering tools. Engaging in the analysis
  <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
 
 **Software Developer** - Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
- - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites. [Web Site](https://centralhub.com.py)
+ - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites.
 - Developer of a tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC. 
 - Developer of a management system using Excel VBA and SQL.
 - Backend developer of ecommerce sites.
