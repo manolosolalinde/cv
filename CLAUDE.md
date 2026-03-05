@@ -33,10 +33,10 @@ This is a **Jekyll static site** deployed on GitHub Pages at `https://manolosola
 
 ## Generating the PDF
 
-Requires `wkhtmltopdf` (`sudo apt install wkhtmltopdf`), then:
+Requires `weasyprint` (`pip install weasyprint`), then:
 
 ```bash
 bash generate_pdf.sh
 ```
 
-The script starts the Jekyll server, renders the page to `manuel_solalinde_cv.pdf` using `--print-media-type` (which activates the `@media print` CSS), then stops the server.
+The script runs `jekyll build`, serves `_site/` on localhost:4000 (needed so root-relative asset paths resolve), runs WeasyPrint against it, then stops the server. Bundler 2.5.23 is required (`gem install bundler -v 2.5.23`).

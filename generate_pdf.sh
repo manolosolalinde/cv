@@ -1,30 +1,27 @@
 #!/bin/bash
 set -e
+cd "$(dirname "$0")"
 
-if ! command -v wkhtmltopdf &> /dev/null; then
-  echo "wkhtmltopdf not found. Install with: sudo apt install wkhtmltopdf"
+if ! command -v weasyprint &> /dev/null; then
+  echo "weasyprint not found. Install with: pip install weasyprint"
   exit 1
 fi
 
-# Start Jekyll server in background
-bundle exec jekyll serve --detach
+# Build the Jekyll site
+echo "Building Jekyll site..."
+PAGES_REPO_NWO=manolosolalinde/cv bundle _2.5.23_ exec jekyll build
+
+# Serve _site/ locally so root-relative asset paths resolve
+python3 -m http.server 4000 --directory _site &
+SERVER_PID=$!
 
 # Wait for server to be ready
-echo "Waiting for Jekyll server..."
 until curl -s http://localhost:4000 > /dev/null; do sleep 1; done
 
 # Generate PDF
-wkhtmltopdf \
-  --print-media-type \
-  --no-background \
-  --margin-top 10 \
-  --margin-bottom 10 \
-  --margin-left 10 \
-  --margin-right 10 \
-  http://localhost:4000 \
-  manuel_solalinde_cv.pdf
+echo "Generating PDF..."
+weasyprint http://localhost:4000 manuel_solalinde_cv.pdf
 
-echo "PDF saved to manuel_solalinde_cv.pdf"
+kill $SERVER_PID
 
-# Stop Jekyll server
-pkill -f "jekyll serve" || true
+echo "Done: manuel_solalinde_cv.pdf"
