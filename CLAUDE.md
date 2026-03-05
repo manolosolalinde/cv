@@ -30,3 +30,13 @@ This is a **Jekyll static site** deployed on GitHub Pages at `https://manolosola
 - `assets/css/main.css` — custom CSS overrides on top of the minimal theme
 
 **Print support:** `README.md` uses `<span class="print-break">` elements (hidden on screen) to control page breaks when printing/saving as PDF. The compiled PDF is also committed as `manuel_solalinde_cv.pdf`.
+
+## Generating the PDF
+
+Requires `wkhtmltopdf` (`sudo apt install wkhtmltopdf`), then:
+
+```bash
+bash generate_pdf.sh
+```
+
+The script starts the Jekyll server, renders the page to `manuel_solalinde_cv.pdf` using `--print-media-type` (which activates the `@media print` CSS), then stops the server.
