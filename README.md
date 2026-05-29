@@ -111,6 +111,29 @@ A set of web applications to visualize, analyze and process real time data from 
        - Can add smoothing and indicators to time series data.
  - _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
 
+**Plunger Optimization App** - [project details](./projects/plunger_optimization.md) <br>
+A data analytics platform to optimize and diagnose plunger-lift gas wells from real-time SCADA data, combining signal processing, ML classification and interactive visualization.
+ - _Role_: Software Development Engineer / Data Science
+ - _Duration_: april 2022 to present
+ - _Key Features_:
+       - Interactive plunger-cycle analysis and stacked-cycle visualization (Streamlit + Plotly).
+       - Automated diagnostic report suite (load-factor, pressure sustained-increase, data quality).
+       - ML-based continuous-vs-conventional well classification.
+       - Daily fleet-wide report generation on AWS (ECS Fargate, Lambda, S3, CloudWatch).
+ - _Technologies_: Python, Streamlit, Pandas, NumPy, SciPy, Scikit-learn, Plotly, AWS (S3, ECS Fargate, Lambda, ECR), Pulumi, Docker, GitHub Actions.
+
+**Gas Injection Optimization App** - [project details](./projects/gas_injection.md) <br>
+A data-driven application that recommends optimal gas-injection rates for gas-lift wells and ranks wells by how far each has drifted from its recommendation.
+ - _Role_: Software Development Engineer / Data Science
+ - _Duration_: april 2022 to present
+ - _Key Features_:
+       - Recommendation model: history clustering (DecisionTreeRegressor) plus a per-cluster penalty score.
+       - Data-driven penalty weights fitted against engineer-labeled wells via Bayesian optimization.
+       - Report ranking wells by injection-vs-recommendation deviation, with operator overrides.
+       - Parallel Lambda fan-out for on-demand report regeneration; per-well data in S3 (parquet).
+ - _Impact_: Reduced over-injection on flagged wells, contributing to a measurable improvement in net sales.
+ - _Technologies_: Python, Streamlit, Pandas, NumPy, Scikit-learn, scikit-optimize, Plotly, AWS (S3, Lambda, DynamoDB), Pulumi, Parquet.
+
 <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
@@ -177,7 +200,7 @@ A simple flask web application to balance team players for video games.
 A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows.
  - _Description_: **Master Thesis**. Level set approach for the simulation of two-phase immiscible newtonian ﬂuids.
  - _Github_: [https://github.com/manolosolalinde/FEM-Multiphase](https://github.com/manolosolalinde/FEM-Multiphase) 
- - _Dissertation_: [http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf](http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf) 
+ - _Dissertation_: [https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf](https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf) 
  - **_Technologies used_**: C++, Matlab, Wolfram Mathematica, Libmesh Finite Elements Library.
 <br><br>
 
@@ -189,7 +212,7 @@ A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows
  - Finished with straight A’s. 
  - _Specialization_: Scientific computing, continuum mechanics, finite elements, optimization, fluid mechanics, heat 
 transfer. 
- - _Master Thesis_: A finite element level-set approach for the simulation of two-phased flows. [http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf](http://www.ppgem.eng.uerj.br/trabalhosconclusao/2011/2011dissdoc_nestor_solalinde.pdf)
+ - _Master Thesis_: A finite element level-set approach for the simulation of two-phased flows. [https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf](https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf)
 <br><br>
 
 **Electromechanical Engineer** <br>

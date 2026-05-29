@@ -12,7 +12,7 @@ category: Full Stack Development
 
 # Centralhub - E-commerce Search Engine
 
-Developer: Nestor Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
+Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
 A search engine platform for specialized web scraping of local e-commerce sites. 
 

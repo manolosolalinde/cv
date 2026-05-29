@@ -5,3 +5,7 @@ Gemfile.lock
 aux
 
 _site
+
+.claude
+.serena
+logs
