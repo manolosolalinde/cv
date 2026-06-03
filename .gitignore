@@ -9,3 +9,6 @@ _site
 .claude
 .serena
 logs
+.docker-gem-cache
+__pycache__/
+*.pyc

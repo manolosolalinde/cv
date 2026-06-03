@@ -18,24 +18,29 @@ p strong {page-break-before:auto}
 }
 }
 
-/* dont print <header> tag */
-
+/* Print/PDF layout fix.
+   The theme collapses its two-column layout to a single column inside a
+   comma-combined media query (`@media print, screen and (max-width: 960px)`).
+   WeasyPrint drops that whole rule, so `section` keeps its base
+   `width:500px; float:right` and the content gets clipped off the right edge.
+   We restate the collapse in a STANDALONE `@media print` block with
+   `!important` so it reliably wins regardless of source order. */
 @media print {
-    header {
-        display: none;
-    }
+    div.wrapper { width: auto !important; margin: 0 !important; }
 
-    footer {
-        display: none;
+    /* hide the sidebar (theme header) and footer in the PDF */
+    header,
+    footer { display: none !important; }
+
+    section {
+        float: none !important;
+        position: static !important;
+        width: auto !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
-
-@media print, screen and (max-width: 960px) { div.wrapper { width: auto; margin: 0; }
-  header, section, footer { float: none; position: static; width: auto; }
-  header { padding-right: 320px; }
-  section { border: none !important; padding: 20px 0; margin: 0 0 20px; }
-  header a small { display: inline; }
-  header ul { position: absolute; right: 50px; top: 52px; } }
 
 p, li > ul {
     margin: 0 0 0px !important;
