@@ -69,6 +69,8 @@ Main developer for the ARTUR platform (C++ Language, VBA), used for the calculat
 
 **General Oil and Gas Applications** - [BKV Corporation](https://bkvcorp.com) <br>
 Set of applications for optimization of artificial lift systems. 
+ - _Client_: BKV Corporation
+ - _Focus_: Data Science, Machine Learning
  - _Applications_:
       - Plunger Optimizations plots, analysis, and reports.
       - Gas Injection Estimator.
@@ -82,8 +84,7 @@ Set of applications for optimization of artificial lift systems.
 **AI Agent Chat** - [project details](./projects/bkv_ai_agent_chat.md) <br>
 A full-stack conversational AI agent that answers oil & gas operational questions over the corporate well database and internal documentation, built on Amazon Bedrock AgentCore.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer
- - _Duration_: april 2022 to present
+ - _Focus_: Full Stack, AI Agents, Cloud Infrastructure
  - _Key Features_:
        - Natural-language to read-only SQL over the corporate well-data warehouse, with cited, tool-backed answers.
        - Real-time streaming (SSE) of tool calls, inputs, and results; persistent conversation history with auto-generated titles and feedback.
@@ -96,8 +97,7 @@ A full-stack conversational AI agent that answers oil & gas operational question
 **Gas Targets App** - [project details](./projects/bkv_gas_targets.md) <br>
 A full-stack web application that generates and sets the monthly gas-production targets for every well, combining a purpose-built trend tool with guided manual review of edge cases.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer
- - _Duration_: april 2022 to present
+ - _Focus_: Full Stack, Cloud Infrastructure
  - _Key Features_:
        - Four-stage monthly workflow: analysis selection, DB update, trend generation, override review, and final CSV export.
        - Parallel, queue-driven Lambda fan-out (SQS) processing the full well set per analysis.
@@ -110,14 +110,7 @@ A full-stack web application that generates and sets the monthly gas-production 
 **Surveillance Dashboard Application** - [project details](./projects/bkv_sd.md) <br>
 A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes. Comprised of 3 sub applications: Single well, Multi well, Daily and Engineering Plots.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer
- - _Duration_: april 2022 to present
- - _Responsabilities_: 
-      - Frontend development and testing (React, Bootstrap, Redux, Plotly.js, Mapbox, jest)
-      - Backend development and testing (Python, Fastapi, Postgres, SQL, pytest, Docker)
-      - AWS Cloud Infrastructure architecture and implementation, using infrastructure as code framework (pulumi, AWS, Lambda, RDS, App Runner, S3, VPC, Route 53).
-      - Lambda functions for cron jobs.
-      - CI/CD pipeline implementation (Github Actions).
+ - _Focus_: Full Stack, Cloud Infrastructure, CI/CD
  - _Key Features_:
        - Azure AD authentication.
        - Support user comments on time series data.
@@ -130,8 +123,7 @@ A set of web applications to visualize, analyze and process real time data from 
 **Plunger Optimization App** - [project details](./projects/bkv_plunger_optimization.md) <br>
 A data analytics platform to optimize and diagnose plunger-lift gas wells from real-time SCADA data, combining signal processing, ML classification and interactive visualization.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer / Data Science
- - _Duration_: april 2022 to present
+ - _Focus_: Data Science, Full Stack
  - _Key Features_:
        - Interactive plunger-cycle analysis and stacked-cycle visualization (Streamlit + Plotly).
        - Automated diagnostic report suite (load-factor, pressure sustained-increase, data quality).
@@ -142,21 +134,19 @@ A data analytics platform to optimize and diagnose plunger-lift gas wells from r
 **Gas Injection Optimization App** - [project details](./projects/bkv_gas_injection.md) <br>
 A data-driven application that recommends optimal gas-injection rates for gas-lift wells and ranks wells by how far each has drifted from its recommendation.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer / Data Science
- - _Duration_: april 2022 to present
+ - _Focus_: Data Science
  - _Key Features_:
        - Recommendation model: history clustering (DecisionTreeRegressor) plus a per-cluster penalty score.
        - Data-driven penalty weights fitted against engineer-labeled wells via Bayesian optimization.
        - Report ranking wells by injection-vs-recommendation deviation, with operator overrides.
        - Parallel Lambda fan-out for on-demand report regeneration; per-well data in S3 (parquet).
- - _Impact_: Reduced over-injection on flagged wells, contributing to a measurable improvement in net sales.
+ - _Impact_: Reduced over-injection on flagged wells, contributing to a dramatic improvement in net sales.
  - _Technologies_: Python, Streamlit, Pandas, NumPy, Scikit-learn, scikit-optimize, Plotly, AWS (S3, Lambda, DynamoDB), Pulumi, Parquet.
 
 **BKV Pulumi Templates** - [project details](./projects/bkv_pulumi_templates.md) <br>
 An internal infrastructure-as-code library and project scaffolding that standardizes how the team deploys containerized applications to AWS ECS Fargate — the deployment foundation behind the client's applications.
  - _Client_: BKV Corporation
- - _Role_: Software Development Engineer / Cloud Infrastructure
- - _Duration_: april 2022 to present
+ - _Focus_: Cloud Infrastructure
  - _Key Features_:
        - Reusable `ECSApplicationStack` Pulumi component: ECR, ALB, Route53, ACM, WAF, IAM, CloudWatch, Fargate service, and autoscaling in one stack.
        - Corporate SSO built in — Azure AD (OIDC) at the load balancer and Azure AD SAML SSO federation for Athena access.
@@ -168,22 +158,22 @@ An internal infrastructure-as-code library and project scaffolding that standard
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
- - _Role_: Full Stack Developer
+ - _Focus_: Full Stack, Web Scraping
  - _Description_: A search engine platform based on web scraping automation of regional e-commerce sites. Consists of 5 sub-projects:
         1. An E-commerce Search Engine Frontend, 
         2. E-commerce Search Engine Admin Backend, 
         3. Web scraping API core and tools, 
         4. Web scraping automation and synchronization tools, 
         5. Devops, Search Engine Implementation, Architecture, and Integrations.
- - **_Technologies used_**: Elasticsearch, Python, Flask, Docker, NoSQL, Scrapy, Selenium, Firebase (Functions, Firestore, Authentication, Hosting), Git, JavaScript, React, Redux, Nodejs, Google Cloud Platform (PubSub, Task Scheduler, Compute Engine, Cloud Run, Task Runner, Logging).
+ - _Technologies_: Elasticsearch, Python, Flask, Docker, NoSQL, Scrapy, Selenium, Firebase (Functions, Firestore, Authentication, Hosting), Git, JavaScript, React, Redux, Nodejs, Google Cloud Platform (PubSub, Task Scheduler, Compute Engine, Cloud Run, Task Runner, Logging).
     Testing: Jest, Pytest.
 <br><br>
 
 **Dual Fisheye to VR180 - Nvidia GPU Video Stitcher** - [project details](./projects/cuda-stitcher.md) <br>
 A tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC,  NVENC.
- - _Role_: Developer
+ - _Focus_: GPU Computing
  - Results obtained were x100+ faster than those obtained using serial CPU programming.
- - **_Technologies used_**: C++, Cmake, CUDA, OpenGL, OpenCV, Nvidia VRWorks.
+ - _Technologies_: C++, Cmake, CUDA, OpenGL, OpenCV, Nvidia VRWorks.
 <br><br>
 
 **Artur Platform - Predimensioning of hydraulic turbine structural components** - [project details](https://www.impsa.com/en/products/hydro/kaplan-turbines/) <br>
@@ -191,7 +181,8 @@ A tool for predimensioning of hydraulic turbine structural components.
  - Lead developer for the ARTUR platform, used for the calculation and pre-dimensioning of hydraulic turbine structural component elements.
  - Assisted in the development of design manuals that set the criteria for calculation and dimensioning of water turbine structural elements.
  - _Employer_: [IMPSA](https://www.impsa.com/en/contact-us/) - [Juan De Miguel](https://www.linkedin.com/in/juan-ram%C3%B3n-de-miguel-198ab51ba/) 
- - **_Technologies used_**: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
+ - _Focus_: Scientific Computing
+ - _Technologies_: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
 <br><br>
 
 <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
@@ -200,28 +191,32 @@ A tool for predimensioning of hydraulic turbine structural components.
 A tool for simulation of wind energy systems using hydrogen and biogas.
  - Developed in coordination with the Hochschule Stralsund as a base tool for simulations in the field of Wind Power - Hydrogen integrated systems for the [ENERTRAG](https://enertrag.com/) company.
  - _Employer_: [Hochschule Stralsund](https://www.hochschule-stralsund.de/) - [Prof. Dr. rer. nat. Jochen Lehmann](mailto:jochen.lehmann@fh-stralsund.de) - [Prof. Dr.-Ing. Thomas Luschtinetz](https://www.hochschule-stralsund.de/host/fakultaeten/elektrotechnik-und-informatik/personalseiten/luschtinetz-thomas/#825099_blank)
- - **_Technologies used_**: Matlab, Matlab Genetic Algorithms Toolbox.
+ - _Focus_: Scientific Computing, Optimization
+ - _Technologies_: Matlab, Matlab Genetic Algorithms Toolbox.
 <br><br>
 
 **SPR System - Technical Secretary of Planning - Paraguayan Government** - [project details](./projects/stp-fao.md) <br>
 Design specifications and UI/UX for the [SPR system](https://spr.stp.gov.py/tablero/public/geografico4.jsp) - Technical Secretary of Planning - Paraguayan Government ([STP](https://www.stp.gov.py/v1/)).
  - Worked in a cross-functional, agile team to rebuild the [SPR system](https://www.stp.gov.py/v1/instrumentos-spr/)
  - Assistance with information architecture and UX writing for the web app
- - _Client:_ [STP-Paraguay](https://www.stp.gov.py/v1/) 
+ - _Client_: [STP-Paraguay](https://www.stp.gov.py/v1/) 
+ - _Focus_: UX/UI, Information Architecture
 <br><br>
 
 **StuffILearned - Personal Software development Notes** - [project details](http://181.126.83.235/) <br>
 A software development personal blog to keep track of new technologies, courses and personal notes. **To be replaced soon.**
  - Provide easy access to common software development notes. 
  - _Website_: [http://181.126.83.235/](http://181.126.83.235/) 
- - **_Technologies used_**: PHP, Wordpress, MySQL, html, css.
+ - _Focus_: Web Development
+ - _Technologies_: PHP, Wordpress, MySQL, html, css.
 <br><br>
 
 **Matchmaking** - [project details](https://github.com/manolosolalinde/matchmaking) <br>
 A simple flask web application to balance team players for video games.
  - Small open source project.
  - _Github_: [https://github.com/manolosolalinde/matchmaking](https://github.com/manolosolalinde/matchmaking)
- - **_Technologies used_**: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
+ - _Focus_: Web Development
+ - _Technologies_: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
 <br><br>
  
  <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
@@ -231,7 +226,8 @@ A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows
  - _Description_: **Master Thesis**. Level set approach for the simulation of two-phase immiscible newtonian ﬂuids.
  - _Github_: [https://github.com/manolosolalinde/FEM-Multiphase](https://github.com/manolosolalinde/FEM-Multiphase) 
  - _Dissertation_: [https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf](https://www.bdtd.uerj.br:8443/bitstream/1/11742/1/Nestor%20M%20Solalinde.pdf) 
- - **_Technologies used_**: C++, Matlab, Wolfram Mathematica, Libmesh Finite Elements Library.
+ - _Focus_: Scientific Computing, Numerical Simulation
+ - _Technologies_: C++, Matlab, Wolfram Mathematica, Libmesh Finite Elements Library.
 <br><br>
 
 
