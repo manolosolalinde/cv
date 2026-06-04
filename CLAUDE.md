@@ -29,7 +29,7 @@ This is a **Jekyll static site** deployed on GitHub Pages at `https://manolosola
 - `_layouts/default.html` — overrides the theme's default layout, injecting `assets/css/main.css` before the theme stylesheet
 - `assets/css/main.css` — custom CSS overrides on top of the minimal theme
 
-**Print support:** `README.md` uses `<span class="print-break">` elements (hidden on screen) to control page breaks when printing/saving as PDF. The compiled PDF is also committed as `manuel_solalinde_cv.pdf`.
+**Print support:** page breaks are **automatic** — `assets/css/main.css` has a `@media print` block that keeps headings with their content, keeps each entry's title attached to its bullet list, and avoids splitting a paragraph or list across pages. There are no manual break markers (the old `<span class="print-break">` elements were removed). The compiled PDF is also committed as `manuel_solalinde_cv.pdf`.
 
 ## Writing a new project page
 
@@ -62,16 +62,20 @@ redirect_link: https://example.com                   # optional — external URL
   </a>
   ```
 
-**Link it from `README.md`:** add an entry in the relevant section following the existing format — `**Title** - [project details](./projects/<name>.md) <br>` plus a short description and bullet points. Insert `<span class="print-break"></span>` between entries where a PDF page break is wanted.
+**Link it from `README.md`:** add an entry in the relevant section following the existing format — `**Title** - [project details](./projects/<name>.md) <br>` plus a short description and bullet points. No page-break markers are needed — PDF page breaks are handled automatically by the print CSS.
 
 **After adding a page:** pushing to `main` updates GitHub Pages automatically; `workwithmanu.com` only reflects it after a manual Netlify redeploy (see parent `../CLAUDE.md`).
 
 ## Generating the PDF
 
-Requires `weasyprint` (`pip install weasyprint`), then:
+Requires `weasyprint` (`pip install weasyprint`) and either a local Ruby/Bundler or Docker, then:
 
 ```bash
 bash generate_pdf.sh
 ```
 
-The script runs `jekyll build`, serves `_site/` on localhost:4000 (needed so root-relative asset paths resolve), runs WeasyPrint against it, then stops the server. Bundler 2.5.23 is required (`gem install bundler -v 2.5.23`).
+What the script does:
+- **Builds the site.** Uses local `bundle _2.5.23_ exec jekyll build` if Bundler is present; otherwise builds inside the `ruby:3.3` container, using the gitignored `.docker-gem-cache/` as the persistent bundle path (`BUNDLE_PATH=/usr/local/bundle`). So no local Ruby install is required as long as Docker is available.
+- **Picks a WeasyPrint-capable Python.** It probes `python3`/`python3.12`/`python3.11`/`python3.10` for one that can `import weasyprint`, rather than calling the bare `weasyprint` launcher (whose shebang breaks when the system Python changes, e.g. an Ubuntu 3.10→3.12 upgrade).
+- **Serves `_site/` on localhost:4000** so root-relative asset paths resolve, then renders.
+- **Rewrites internal links to the public site.** Navigation links are rewritten to `https://manolosolalinde.github.io/cv/...` in the PDF, while assets keep loading from the local server — so links work off-machine but locally-edited CSS is still reflected. (The deployed site already serves correct `/cv/...` links, so PDFs generated from it are unaffected.)
