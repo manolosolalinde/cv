@@ -65,92 +65,90 @@ Main developer for the ARTUR platform (C++ Language, VBA), used for the calculat
 
 ## 💻 Projects
 
-**General Oil and Gas Applications** - [BKV Corporation](https://bkvcorp.com) <br>
-Set of applications for optimization of artificial lift systems. 
- - _Client_: BKV Corporation
- - _Focus_: Data Science, Machine Learning
- - _Applications_:
-      - Plunger Optimizations plots, analysis, and reports.
-      - Gas Injection Estimator.
-      - CO2 Injection runtime history app.
-      - Well communication tool.
-      - LLM application for the detection of punch holes in tubing and casing.
-      - Reservoir Pressure Propagation calculator.
- - _Technologies_: Python, Streamlit, pandas, numpy, scikit-learn, plotly, tensorflow, keras.
-
-
 **AI Agent Chat** - [project details](./projects/bkv_ai_agent_chat.md) <br>
 A full-stack conversational AI agent that answers oil & gas operational questions over the corporate well database and internal documentation, built on Amazon Bedrock AgentCore.
  - _Client_: BKV Corporation
  - _Focus_: Full Stack, AI Agents, Cloud Infrastructure
  - _Key Features_:
-       - Natural-language to read-only SQL over the corporate well-data warehouse, with cited, tool-backed answers.
-       - Real-time streaming (SSE) of tool calls, inputs, and results; persistent conversation history with auto-generated titles and feedback.
-       - Gateway (MCP) tool suite: SQL + schema docs, internal datadocs hybrid search, web search/fetch, and a Python code interpreter.
-       - Four interchangeable agent patterns (Strands, LangGraph, Claude Agent SDK single & multi-agent) on Bedrock AgentCore Runtime (Claude Sonnet 4.5).
-       - React 19 SPA + FastAPI on ECS Fargate; Microsoft Entra ID (OIDC) user auth and Cognito M2M; provisioned as code with Pulumi.
+   - Natural-language to read-only SQL over the corporate well-data warehouse, with cited, tool-backed answers.
+   - Real-time streaming (SSE) of tool calls, inputs, and results; persistent conversation history with auto-generated titles and feedback.
+   - Gateway (MCP) tool suite: SQL + schema docs, internal datadocs hybrid search, web search/fetch, and a Python code interpreter.
+   - Four interchangeable agent patterns (Strands, LangGraph, Claude Agent SDK single & multi-agent) on Bedrock AgentCore Runtime (Claude Sonnet 4.5).
+   - React 19 SPA + FastAPI on ECS Fargate; Microsoft Entra ID (OIDC) user auth and Cognito M2M; provisioned as code with Pulumi.
  - _Technologies_: Python, FastAPI, TypeScript, React, Tailwind CSS, Amazon Bedrock AgentCore (Runtime, Gateway, Memory, Code Interpreter), Strands Agents, LangGraph, Claude Agent SDK, AWS (ECS Fargate, ALB, Lambda, DynamoDB, Cognito), Pulumi, Docker, Microsoft Entra ID.
 
-
-**Gas Targets App** - [project details](./projects/bkv_gas_targets.md) <br>
-A full-stack web application that generates and sets the monthly gas-production targets for every well, combining a purpose-built trend tool with guided manual review of edge cases.
+ **Gas Injection Optimization App** - [project details](./projects/bkv_gas_injection.md) <br>
+A data-driven application that recommends optimal gas-injection rates for gas-lift wells and ranks wells by how far each has drifted from its recommendation.
  - _Client_: BKV Corporation
- - _Focus_: Full Stack, Cloud Infrastructure
+ - _Focus_: Data Science
  - _Key Features_:
-       - Four-stage monthly workflow: analysis selection, DB update, trend generation, override review, and final CSV export.
-       - Parallel, queue-driven Lambda fan-out (SQS) processing the full well set per analysis.
-       - Reads raw production history from a cross-account Amazon Redshift warehouse into a private PostgreSQL working DB.
-       - Case-study reviews (last-7-days production, trend review) with Excel-based engineer overrides.
-       - Cloud-native stack provisioned as code (Pulumi); Dockerized services deployed to App Runner / Lambda via GitHub Actions and ECR.
- - _Technologies_: Python, JavaScript, React, Redux, FastAPI, PostgreSQL, Amazon Redshift, AWS (App Runner, Lambda, SQS, RDS, VPC, ECR), Pulumi, Docker, GitHub Actions, Azure AD, Plotly.js.
-
+   - Recommendation model: history clustering (DecisionTreeRegressor) plus a per-cluster penalty score.
+   - Data-driven penalty weights fitted against engineer-labeled wells via Bayesian optimization.
+   - Report ranking wells by injection-vs-recommendation deviation, with operator overrides.
+   - Parallel Lambda fan-out for on-demand report regeneration; per-well data in S3 (parquet).
+ - _Impact_: Reduced over-injection on flagged wells, contributing to a dramatic improvement in net sales.
+ - _Technologies_: Python, Streamlit, Pandas, NumPy, Scikit-learn, scikit-optimize, Plotly, AWS (S3, Lambda, DynamoDB), Pulumi, Parquet.
 
 **Surveillance Dashboard Application** - [project details](./projects/bkv_sd.md) <br>
 A set of web applications to visualize, analyze and process real time data from gas wells. Drastically improves performance over custom Power BI applications that serve similar purposes. Comprised of 3 sub applications: Single well, Multi well, Daily and Engineering Plots.
  - _Client_: BKV Corporation
  - _Focus_: Full Stack, Cloud Infrastructure, CI/CD
  - _Key Features_:
-       - Azure AD authentication.
-       - Support user comments on time series data.
-       - Automatic data resampling for time series data.
-       - Selection and filter of wells from lists or maps.
-       - Multi well selection and data comparison.
-       - Can add smoothing and indicators to time series data.
+   - Azure AD authentication.
+   - Support user comments on time series data.
+   - Automatic data resampling for time series data.
+   - Selection and filter of wells from lists or maps.
+   - Multi well selection and data comparison.
+   - Can add smoothing and indicators to time series data.
  - _Technologies_: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
+
+**Gas Targets App** - [project details](./projects/bkv_gas_targets.md) <br>
+A full-stack web application that generates and sets the monthly gas-production targets for every well, combining a purpose-built trend tool with guided manual review of edge cases.
+ - _Client_: BKV Corporation
+ - _Focus_: Full Stack, Cloud Infrastructure
+ - _Key Features_:
+   - Four-stage monthly workflow: analysis selection, DB update, trend generation, override review, and final CSV export.
+   - Parallel, queue-driven Lambda fan-out (SQS) processing the full well set per analysis.
+   - Reads raw production history from a cross-account Amazon Redshift warehouse into a private PostgreSQL working DB.
+   - Case-study reviews (last-7-days production, trend review) with Excel-based engineer overrides.
+   - Cloud-native stack provisioned as code (Pulumi); Dockerized services deployed to App Runner / Lambda via GitHub Actions and ECR.
+ - _Technologies_: Python, JavaScript, React, Redux, FastAPI, PostgreSQL, Amazon Redshift, AWS (App Runner, Lambda, SQS, RDS, VPC, ECR), Pulumi, Docker, GitHub Actions, Azure AD, Plotly.js.
 
 **Plunger Optimization App** - [project details](./projects/bkv_plunger_optimization.md) <br>
 A data analytics platform to optimize and diagnose plunger-lift gas wells from real-time SCADA data, combining signal processing, ML classification and interactive visualization.
  - _Client_: BKV Corporation
  - _Focus_: Data Science, Full Stack
  - _Key Features_:
-       - Interactive plunger-cycle analysis and stacked-cycle visualization (Streamlit + Plotly).
-       - Automated diagnostic report suite (load-factor, pressure sustained-increase, data quality).
-       - ML-based continuous-vs-conventional well classification.
-       - Daily fleet-wide report generation on AWS (ECS Fargate, Lambda, S3, CloudWatch).
+   - Interactive plunger-cycle analysis and stacked-cycle visualization (Streamlit + Plotly).
+   - Automated diagnostic report suite (load-factor, pressure sustained-increase, data quality).
+   - ML-based continuous-vs-conventional well classification.
+   - Daily fleet-wide report generation on AWS (ECS Fargate, Lambda, S3, CloudWatch).
  - _Technologies_: Python, Streamlit, Pandas, NumPy, SciPy, Scikit-learn, Plotly, AWS (S3, ECS Fargate, Lambda, ECR), Pulumi, Docker, GitHub Actions.
-
-**Gas Injection Optimization App** - [project details](./projects/bkv_gas_injection.md) <br>
-A data-driven application that recommends optimal gas-injection rates for gas-lift wells and ranks wells by how far each has drifted from its recommendation.
- - _Client_: BKV Corporation
- - _Focus_: Data Science
- - _Key Features_:
-       - Recommendation model: history clustering (DecisionTreeRegressor) plus a per-cluster penalty score.
-       - Data-driven penalty weights fitted against engineer-labeled wells via Bayesian optimization.
-       - Report ranking wells by injection-vs-recommendation deviation, with operator overrides.
-       - Parallel Lambda fan-out for on-demand report regeneration; per-well data in S3 (parquet).
- - _Impact_: Reduced over-injection on flagged wells, contributing to a dramatic improvement in net sales.
- - _Technologies_: Python, Streamlit, Pandas, NumPy, Scikit-learn, scikit-optimize, Plotly, AWS (S3, Lambda, DynamoDB), Pulumi, Parquet.
 
 **BKV Pulumi Templates** - [project details](./projects/bkv_pulumi_templates.md) <br>
 An internal infrastructure-as-code library and project scaffolding that standardizes how the team deploys containerized applications to AWS ECS Fargate — the deployment foundation behind the client's applications.
  - _Client_: BKV Corporation
  - _Focus_: Cloud Infrastructure
  - _Key Features_:
-       - Reusable `ECSApplicationStack` Pulumi component: ECR, ALB, Route53, ACM, WAF, IAM, CloudWatch, Fargate service, and autoscaling in one stack.
-       - Corporate SSO built in — Azure AD (OIDC) at the load balancer and Azure AD SAML SSO federation for Athena access.
-       - Composable add-ons for Athena and cross-account Redshift access.
-       - `bkv-ecs-aws-python` project template with config scripts and GitHub Actions CI/CD (preview-on-PR, deploy-on-merge).
+   - Reusable `ECSApplicationStack` Pulumi component: ECR, ALB, Route53, ACM, WAF, IAM, CloudWatch, Fargate service, and autoscaling in one stack.
+   - Corporate SSO built in — Azure AD (OIDC) at the load balancer and Azure AD SAML SSO federation for Athena access.
+   - Composable add-ons for Athena and cross-account Redshift access.
+   - `bkv-ecs-aws-python` project template with config scripts and GitHub Actions CI/CD (preview-on-PR, deploy-on-merge).
  - _Technologies_: Python, Pulumi, AWS (ECS Fargate, ALB, ECR, Route53, ACM, WAF, CloudWatch, IAM, S3, Athena, Glue, Redshift, Secrets Manager), Azure AD (OIDC + SAML SSO), Docker, GitHub Actions.
+
+ **General Oil and Gas Applications** - [BKV Corporation](https://bkvcorp.com) <br>
+Set of applications for optimization of artificial lift systems. 
+ - _Client_: BKV Corporation
+ - _Focus_: Data Science, Machine Learning
+ - _Applications_:
+   - Plunger Optimizations plots, analysis, and reports.
+   - Gas Injection Estimator.
+   - CO2 Injection runtime history app.
+   - Well communication tool.
+   - LLM application for the detection of punch holes in tubing and casing.
+   - Reservoir Pressure Propagation calculator.
+ - _Technologies_: Python, Streamlit, pandas, numpy, scikit-learn, plotly, tensorflow, keras.
+
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
@@ -349,9 +347,9 @@ Most of these where used as technology introduction material before diving into 
 January 2017 to current date
  - Asuncion – Paraguay (January 2017 to current date) 
  - Calculation and assessment of structural components using finite element analysis tools for:
-       - Naval industry (tugboats, barges).
-       - Cement Industry (mills, structural components).
-       - Shipyards.
+   - Naval industry (tugboats, barges).
+   - Cement Industry (mills, structural components).
+   - Shipyards.
  - Design and calculation of hydraulic systems (industrial plants).
  - Design and calculation of general steel structures.
  - Electrical, HVAC and Plumbing projects. 
