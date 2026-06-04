@@ -1,21 +1,41 @@
-@media print
-{
-p strong {page-break-before:auto}
-}
-
-
-.print-break {
-    display: none; /* Hidden by default */
-  }
+/* Legacy break markers are no longer used — keep them hidden everywhere in
+   case any remain in content. Page breaks are now automatic (see below). */
+.print-break { display: none; }
 
 @media print {
-.print-break {
-    display: block; /* Show only during printing */
-    height: 0; /* Avoid extra height */
-    margin: 0;
-    padding: 0;
-    page-break-before: always; /* Optionally add a page break here */
-}
+    /* --- Automatic page breaks -----------------------------------------
+       We no longer force breaks at hand-placed markers (which drifted out of
+       place as content changed and left half-empty pages). Instead we tell
+       the renderer where NOT to break and let it choose clean boundaries
+       between CV entries.
+
+       Each entry renders as a title paragraph (<p><strong>…</strong></p>)
+       immediately followed by its bullet <ul>, with no wrapping element. */
+
+    /* Keep a section/sub heading glued to the content beneath it. */
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid;
+        page-break-after: avoid;   /* legacy alias */
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Keep an entry's title line attached to the list that follows it. */
+    p {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    /* Keep paragraphs, bullet lists, and individual bullets from splitting
+       across a page. Entry titles often share a <p> with their summary line
+       (separated by <br>), so a splittable <p> would strand the title. */
+    p, ul, ol, li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Never strand a single line at a page edge. */
+    p, li { orphans: 2; widows: 2; }
 }
 
 /* Print/PDF layout fix.

@@ -46,8 +46,6 @@ Creating surveillance dashboards and engineering tools. Engaging in the analysis
 - Worked in a cross-functional, agile team to rebuild the SPR system for the Paraguayan National Secretary of Planning.
 - Assistance with information architecture and UX writing for webapps -->
 
- <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
-
 **Software Developer** - Self Employed / Independent Contractor - Jul 2017 - Jul 2022 <br>
  - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites.
 - Developer of a tool for converting dual fisheye camera videos to equirectangular stitched videos using NVIDIA CUDA, NVDEC, NVENC. 
@@ -154,8 +152,6 @@ An internal infrastructure-as-code library and project scaffolding that standard
        - `bkv-ecs-aws-python` project template with config scripts and GitHub Actions CI/CD (preview-on-PR, deploy-on-merge).
  - _Technologies_: Python, Pulumi, AWS (ECS Fargate, ALB, ECR, Route53, ACM, WAF, CloudWatch, IAM, S3, Athena, Glue, Redshift, Secrets Manager), Azure AD (OIDC + SAML SSO), Docker, GitHub Actions.
 
-<span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
-
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
 A search engine platform based on web scraping of local e-commerce sites.
  - _Focus_: Full Stack, Web Scraping
@@ -184,8 +180,6 @@ A tool for predimensioning of hydraulic turbine structural components.
  - _Focus_: Scientific Computing
  - _Technologies_: C++, ANSYS Multiphysics API, Matlab, Excel VBA, SolidEdge API.
 <br><br>
-
-<span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
 
 **Enertrag WindEnergy-Hydrogen-Biogas Integrated System Simulation Tool** - [project details](./projects/enertrag.md) <br>
 A tool for simulation of wind energy systems using hydrogen and biogas.
@@ -219,8 +213,6 @@ A simple flask web application to balance team players for video games.
  - _Technologies_: Python, Flask, MySQL, SQLAlchemy, Jinja, Bootstrap, html, css.
 <br><br>
  
- <span class="print-break"></span> <!-- Hidden on screen but breaks for print -->
-
 **A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows** - [short summary](https://github.com/manolosolalinde/FEM-Multiphase/blob/master/documentation/NSOLALINDE_EBECEM_v4.pdf) <br>
 A Finite Element Based Level Set Approach for the Simulation of Two-Phased Flows.
  - _Description_: **Master Thesis**. Level set approach for the simulation of two-phase immiscible newtonian ﬂuids.
