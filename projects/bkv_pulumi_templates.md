@@ -13,54 +13,32 @@ category: Cloud Infrastructure / DevOps
 
 Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
-An internal **infrastructure-as-code library** that standardizes how the data and engineering teams ship containerized applications to AWS. Instead of each project re-implementing networking, authentication, load balancing and CI/CD from scratch, every app composes a small set of reusable **Pulumi components** and starts from ready-made scaffolding — so a new app is deployable in minutes rather than rebuilt from the ground up. It eliminates per-project re-implementation of the same infrastructure and is the deployment foundation behind **6+ production apps**: Surveillance Dashboard, Gas Targets, Gas Injection, Plunger Optimization, AI Agent Chat, and the broader Streamlit toolkit.
+An internal **infrastructure-as-code library** that standardizes how the data and engineering teams ship containerized applications to AWS. Instead of each project re-implementing networking, authentication, load balancing and CI/CD from scratch, every app starts from a small set of reusable building blocks and ready-made scaffolding — so a new app is deployable in minutes rather than rebuilt from the ground up. It eliminates per-project re-implementation of the same infrastructure and is the deployment foundation behind **6+ production apps**: Surveillance Dashboard, Gas Targets, Gas Injection, Plunger Optimization, AI Agent Chat, and the broader Streamlit toolkit.
 
-## Overview
+## What it provides
 
-The repository is split into two parts:
+- **A single application-stack component** — one declaration provisions a complete, production-ready ECS Fargate application end to end: container registry (ECR) with Docker build and push, an Application Load Balancer fronted by **corporate SSO (Azure AD OIDC)**, DNS and TLS (Route53 + ACM), WAF, scoped IAM, centralized logging (CloudWatch), and target-tracking autoscaling. The whole library is implemented as reusable Pulumi **ComponentResources**, so apps assemble infrastructure from typed, parameterized parts rather than hand-wiring resources.
+- **Project scaffolding** — generates a new, immediately deployable project pre-wired to the library and to CI/CD: GitHub Actions run `pulumi preview` on every pull request and `pulumi up` on merge, so every scaffolded app ships with preview-on-PR and deploy-on-merge from day one.
 
-- **`bkv_pulumi_templates`** — a pip-installable Python library of reusable Pulumi components. One top-level component, `ECSApplicationStack`, provisions a complete, production-ready ECS Fargate application; optional add-ons wire up Athena and Redshift access.
-- **`bkv_pulumi_project_templates`** — project scaffolding (`bkv-ecs-aws-python`) that generates a new Pulumi project pre-wired to the library, including config scripts and GitHub Actions workflows, so a new app is deployable in minutes.
+## Design decisions & trade-offs
 
-A standalone Claude Code skill ships alongside the library to scaffold and modify projects, encapsulating the full parameter reference and common modification patterns.
+- **One orchestrator over many loose components** — a single top-level application-stack component composes the underlying pieces instead of asking each project to wire them together by hand. This reduces parameter explosion and enforces consistency across apps.
+- **Composable add-ons over a monolithic template** — analytics integrations attach to an existing application stack rather than baking every integration into one template. Teams adopt features gradually, without rewriting the base deployment.
+- **Consume shared infrastructure, don't redeclare it** — applications consume the shared base network (VPC, subnets, ECS cluster, WAF) through a stack-reference pattern instead of re-creating it. One owner manages the base network; apps simply reference it.
+- **Dual-path corporate auth** — SSO at the load balancer (Azure AD OIDC) governs *app access*, while SAML federation governs *analytics query access*. Keeping these as separate identities lets app sign-in and data-query permissions evolve independently.
 
-## Library Components
+## Hard problems solved
 
-- **`ECSApplicationStack`** — the top-level orchestrator. Composes three sub-stacks into a single deployable application:
-  - **RepositoryStack** — ECR repository plus Docker image build and push.
-  - **LoadBalancerStack** — ACM certificate, Application Load Balancer with **Azure AD (OIDC)** authentication, Route53 DNS record, and WAF.
-  - **ECSFargateStack** — IAM task role, security group, CloudWatch log group, Fargate service, and target-tracking autoscaling (CPU or memory).
-- **`AthenaStack`** — adds Athena access with **Azure AD SAML SSO** federation: SAML identity provider, federated read role, Athena database/workgroup over the app's S3 bucket, and the IAM policies tying it to the ECS task role.
-- **`RedshiftAccessSetup`** — cross-account Redshift wiring, creating an assumable role in the data-warehouse account and granting the ECS task role scoped `redshift-data` access.
-- **ECS IAM helpers** — small functions to attach common S3-bucket and CloudWatch Logs policies to a task role after stack creation.
-
-## Project Templates
-
-The `bkv-ecs-aws-python` template scaffolds a complete, deployable project:
-
-- `__main__.py` showing the canonical usage pattern, with `src/base_config.py` parsing Pulumi stack config into typed `*StackArgs` objects.
-- `config_yaml.sh` — an automated configuration script that sets all required Pulumi config values for a new stack.
-- `.github/workflows/` — `preview.yaml` (runs `pulumi preview` on PRs) and `deploy_pulumi.yaml` (runs `pulumi up` on merge), giving every scaffolded project CI/CD out of the box.
-- `destroy_and_recreate.sh` and a curated `.gitignore`.
-
-## Architecture
-
-Every component follows a consistent, composable pattern: a `*StackArgs` dataclass holds configuration, a `*Stack` class extends `pulumi.ComponentResource`, child resources are created with `ResourceOptions(parent=self)` for correct parent–child tracking, and tags are propagated through the entire hierarchy. Shared network infrastructure (VPC, subnets, ECS cluster, WAF) is consumed through a `MicroAppBaseStackReference` wrapper around `pulumi.StackReference`, so applications never re-declare the base network — they reference it.
-
-Resources follow a uniform `{app_name}-{environment}-{resource-type}` naming convention, secrets are never hardcoded (sourced from Pulumi secrets or AWS Secrets Manager ARNs injected as container environment variables), and stacks map to environments (`prod`, `stage`, `dev`).
-
-#### Design decisions & trade-offs
-
-- **One orchestrator over many loose components** — a single top-level `ECSApplicationStack` composes the sub-stacks (Repository, LoadBalancer, ECSFargate) instead of asking each project to wire components together by hand. This reduces parameter explosion and enforces consistency across apps.
-- **Composable add-ons over a monolithic template** — `AthenaStack` and `RedshiftAccessSetup` attach to an existing application stack rather than baking every integration into one template. Teams adopt analytics features gradually, without rewriting the base deployment.
-- **A `StackReference` wrapper for shared infrastructure** — a `MicroAppBaseStackReference` wraps `pulumi.StackReference` so apps *consume* the shared network (VPC, subnets, ECS cluster, WAF) instead of re-declaring it. One owner manages the base network; apps reference it.
-- **Dual-path corporate auth** — Azure AD OIDC at the load balancer governs *app access*, while Azure AD SAML federation governs *Athena query access*. Keeping these as separate identities lets app sign-in and data-query permissions evolve independently.
+- **Standardized enterprise authentication for every app** — corporate SSO (Azure AD OIDC) at the ingress plus SAML-federated analytics access, so every app gets enterprise sign-in essentially for free instead of reinventing auth each time.
+- **Least-privilege cross-account data access** — secure, scoped access into a central Redshift data warehouse living in a separate account, granted through an assumable role rather than broad, shared credentials.
+- **Reusable multi-environment deployments** — the same code yields `dev`, `stage`, and `prod` environments, with secrets sourced at runtime from Pulumi secrets and AWS Secrets Manager and never placed in the codebase.
+- **Consistent tagging and naming at scale** — a uniform, predictable scheme for naming and tagging every resource so cost allocation and ownership tracking stay reliable across a growing fleet of apps.
 
 ## Key Features
 
-- **One-command application stack** — a single `ECSApplicationStack` provisions ECR, ALB, DNS, certificates, WAF, IAM, logging, the Fargate service, and autoscaling.
-- **Corporate SSO built in** — Azure AD OIDC at the load balancer for app access, and Azure AD SAML SSO federation for Athena query access.
-- **Reusable and multi-environment** — components are parameterized and environment-scoped, so the same code deploys `dev`, `stage`, and `prod` stacks.
+- **One-command application stack** — a single application-stack component provisions ECR, ALB, DNS, certificates, WAF, IAM, logging, the Fargate service, and autoscaling.
+- **Corporate SSO built in** — Azure AD OIDC at the load balancer for app access, and SAML federation for analytics query access.
+- **Reusable and multi-environment** — components are parameterized and environment-scoped, so the same code deploys `dev`, `stage`, and `prod`.
 - **Standardized CI/CD** — scaffolded projects ship with GitHub Actions preview-on-PR and deploy-on-merge workflows.
-- **Secrets-safe by design** — secret values flow through Pulumi secrets and Secrets Manager, never the codebase.
+- **Secrets-safe by design** — secret values flow through Pulumi secrets and AWS Secrets Manager, never the codebase.
 - **Composable add-ons** — Athena and Redshift integrations attach to an existing application stack without rewriting it.

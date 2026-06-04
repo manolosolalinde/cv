@@ -5,7 +5,7 @@ image_url: ./images/covers/surveillance.png
 image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/covers/surveillance.png
 date: 2023-12-01
 order: 1
-technologies: Python, FastAPI, React 17, Redux, JavaScript, Plotly, DuckDB, PostgreSQL, AWS (ECS Fargate, App Runner, Lambda, S3, RDS, ECR, EventBridge), Azure AD / MSAL, Docker, GitHub Actions, Parquet, ArcGIS, PWA / Service Workers, Pytest, HTML/CSS.
+technologies: Python, FastAPI, React, Redux, JavaScript, Plotly, DuckDB, PostgreSQL, AWS (ECS Fargate, App Runner, Lambda, S3, RDS, ECR, EventBridge), Azure AD / MSAL, Docker, GitHub Actions, Parquet, ArcGIS, PWA / Service Workers, Pytest, HTML/CSS.
 category: Full Stack Development
 ---
 
@@ -52,7 +52,7 @@ The application runs on a stateless AWS architecture: the FastAPI backend on **E
 - The backend reaches **RDS PostgreSQL** (via a VPC connector) and **S3** (via IAM authentication) for state and analytics data; the **Azure AD (MSAL)**-authenticated frontend reaches data only through the backend.
 - A daily **EventBridge** rule triggers the **Lambda** DB-updater, which refreshes the database from the latest S3 data.
 
-**Data sources:** PostgreSQL (comments, saved well groups, API-call logs, a wells reference table), S3 parquet (high-frequency sensor data, daily production data, external comments), **DuckDB** (on-the-fly querying and resampling of the parquet data), and the ArcGIS API (short-lived map tokens). All API endpoints except the health check require an Azure AD bearer token, enforced by a `@requires_auth` decorator.
+**Data sources:** PostgreSQL (comments, saved well groups, API-call logs, a wells reference table), S3 parquet (high-frequency sensor data, daily production data, external comments), **DuckDB** (on-the-fly querying and resampling of the parquet data), and the ArcGIS API (short-lived map tokens). All API endpoints except the health check require an Azure AD bearer token, enforced on every endpoint.
 
 **CI/CD:** Deployments are automated with GitHub Actions, which builds and pushes the Docker images, runs the backend test suite, and updates the AWS services.
 
