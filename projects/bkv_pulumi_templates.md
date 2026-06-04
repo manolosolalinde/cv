@@ -13,7 +13,7 @@ category: Cloud Infrastructure / DevOps
 
 Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
-An internal **infrastructure-as-code library** that standardizes how the data and engineering teams ship containerized applications to AWS. Instead of each project re-implementing networking, authentication, load balancing and CI/CD from scratch, every app composes a small set of reusable **Pulumi components** and starts from a ready-made project template. It is the deployment foundation behind the team's Streamlit and full-stack apps (Surveillance Dashboard, Gas Targets, Gas Injection, Plunger Optimization, AI Agent Chat, and the broader Streamlit toolkit).
+An internal **infrastructure-as-code library** that standardizes how the data and engineering teams ship containerized applications to AWS. Instead of each project re-implementing networking, authentication, load balancing and CI/CD from scratch, every app composes a small set of reusable **Pulumi components** and starts from ready-made scaffolding — so a new app is deployable in minutes rather than rebuilt from the ground up. It eliminates per-project re-implementation of the same infrastructure and is the deployment foundation behind **6+ production apps**: Surveillance Dashboard, Gas Targets, Gas Injection, Plunger Optimization, AI Agent Chat, and the broader Streamlit toolkit.
 
 ## Overview
 
@@ -48,6 +48,13 @@ The `bkv-ecs-aws-python` template scaffolds a complete, deployable project:
 Every component follows a consistent, composable pattern: a `*StackArgs` dataclass holds configuration, a `*Stack` class extends `pulumi.ComponentResource`, child resources are created with `ResourceOptions(parent=self)` for correct parent–child tracking, and tags are propagated through the entire hierarchy. Shared network infrastructure (VPC, subnets, ECS cluster, WAF) is consumed through a `MicroAppBaseStackReference` wrapper around `pulumi.StackReference`, so applications never re-declare the base network — they reference it.
 
 Resources follow a uniform `{app_name}-{environment}-{resource-type}` naming convention, secrets are never hardcoded (sourced from Pulumi secrets or AWS Secrets Manager ARNs injected as container environment variables), and stacks map to environments (`prod`, `stage`, `dev`).
+
+#### Design decisions & trade-offs
+
+- **One orchestrator over many loose components** — a single top-level `ECSApplicationStack` composes the sub-stacks (Repository, LoadBalancer, ECSFargate) instead of asking each project to wire components together by hand. This reduces parameter explosion and enforces consistency across apps.
+- **Composable add-ons over a monolithic template** — `AthenaStack` and `RedshiftAccessSetup` attach to an existing application stack rather than baking every integration into one template. Teams adopt analytics features gradually, without rewriting the base deployment.
+- **A `StackReference` wrapper for shared infrastructure** — a `MicroAppBaseStackReference` wraps `pulumi.StackReference` so apps *consume* the shared network (VPC, subnets, ECS cluster, WAF) instead of re-declaring it. One owner manages the base network; apps reference it.
+- **Dual-path corporate auth** — Azure AD OIDC at the load balancer governs *app access*, while Azure AD SAML federation governs *Athena query access*. Keeping these as separate identities lets app sign-in and data-query permissions evolve independently.
 
 ## Key Features
 

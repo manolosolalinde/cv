@@ -13,7 +13,7 @@ category: Full Stack
 
 Software Engineer/Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
-A full-stack web application that helps reservoir and production engineers **generate the monthly gas-production targets for every well**. It combines an interpolation/trend tool purpose-built for this task with guided manual review of the edge cases, then exports the finalized targets as the operator CSV consumed downstream. *(This page documents the **v2.1.0** architecture — a React frontend with a FastAPI backend on AWS App Runner — since superseded by a unified Streamlit redesign on ECS Fargate.)* The heavy lifting — reading raw production history from the corporate data warehouse and fitting a trend per well — runs as a **parallel, queue-driven Lambda fan-out**, so an engineer can process the entire well set in a single analysis.
+Every month, reservoir and production engineers must **set the monthly gas-production target for every well**. Doing this well-by-well was a slow, manual grind; this full-stack web application lets an engineer **process the entire well set in a single analysis**, turning that process into about an hour of compute. It combines an interpolation/trend tool purpose-built for this task with guided manual review of the edge cases, then exports the finalized targets as the operator CSV consumed downstream. *(This page documents the **v2.1.0** architecture — a React frontend with a FastAPI backend on AWS App Runner — since superseded by a unified Streamlit redesign on ECS Fargate.)* The heavy lifting — reading raw production history from the corporate data warehouse and fitting a trend per well — runs as a **parallel, queue-driven Lambda fan-out**, so the full well set is processed in one pass instead of one well at a time.
 
 ## Overview
 
@@ -35,11 +35,17 @@ The system is a containerized, cloud-native stack provisioned entirely as code w
 
 - **Frontend** — a **React** (Redux) single-page app served by an **AWS App Runner** service, authenticated through **Azure AD**, talking to the backend over the internet.
 - **Backend** — a **Python / FastAPI** API on a second **App Runner** service. It reaches the working database through a **VPC connector** and pushes work onto **SQS** using IAM authentication.
-- **Worker** — a **Lambda** function triggered by SQS messages. It reads production data from the cross-account **Amazon Redshift** warehouse (by assuming a role in the Redshift account) and reads/writes the working database. Both the backend and the Lambda are given Elastic IPs for outbound internet access.
-- **Data** — a **PostgreSQL RDS** instance inside a dedicated VPC (two subnets across availability zones) holds the per-analysis header, raw, restim, trends, and overrides tables.
+- **Worker** — a **Lambda** function triggered by SQS messages. It reads production data from a **cross-account corporate Amazon Redshift** warehouse over scoped access, and reads/writes the working database.
+- **Data** — a **PostgreSQL RDS** working database holds the per-analysis header, raw, restim, trends, and overrides tables.
 - **Queue** — an **SQS** queue decouples the API from the workers and is the trigger that drives the parallel fan-out.
 
-The asynchronous operations follow a consistent pattern: the frontend calls a backend endpoint (`/update_db`, `/generate_trends`), then polls `/get_state` until the work reports `finished`. The backend enqueues one SQS message per unit of work (per table for the DB update, per well for trend generation); each message triggers an independent Lambda invocation, and a `trend_invocation` table tracks per-well status so the state endpoint knows when the whole batch is complete.
+The asynchronous operations follow a consistent pattern: the frontend calls a backend endpoint to kick off the work, then polls a state endpoint until the work reports `finished`. The backend enqueues one SQS message per unit of work (per table for the DB update, per well for trend generation); each message triggers an independent Lambda invocation, and a per-well job-status table tracks each well so the state endpoint knows when the whole batch is complete.
+
+#### Design decisions & trade-offs
+
+- **On-demand working database** — rather than a shared, always-on warehouse, the RDS working DB is started and stopped per analysis, so it only runs (and only bills) while an analysis is in progress. This keeps cost bounded and leaves the engineer in control of when compute is live.
+- **Queue-driven fan-out over direct invocation** — instead of the backend invoking workers directly, an **SQS** queue drives the Lambda fan-out. This decouples the API from worker scaling and isolates per-well failures, so one bad well can't take down the batch.
+- **Production-faithful local development** — locally the environment can't reach the queue or the warehouse, so Redshift reads are **mocked** and the backend **invokes the Lambda directly**. This reproduces the production data flow without any cloud dependencies.
 
 ## CI/CD & Local Development
 

@@ -24,7 +24,7 @@ The platform is organized as a portal of focused sub-applications, all sharing a
 - **Single Well Surveillance** — study one well in depth, plotting multiple sensors/UDCs over a chosen time range.
 - **Multi Well Surveillance** — compare one sensor type across many wells as color-coded overlaid lines.
 - **Daily Production & Engineering Plots** — daily gas/oil/water volumes and engineering-calculation charts (including material-balance-time).
-- **Admin Dashboard** — usage analytics and API-call log summaries, restricted to an admin allowlist.
+- **Admin Dashboard** — usage analytics and API-call log summaries, restricted to administrators.
 
 #### Single Well Surveillance
 
@@ -40,23 +40,28 @@ Displays daily production volumes (gas, oil, water) and engineering-calculation 
 
 #### Portal & Admin
 
-The **Portal** is the landing hub — a grid of cards linking to each application. The **Admin Dashboard** surfaces usage statistics and API-call logs, gated on the backend by a hardcoded email allowlist (non-admins receive `401`).
+The **Portal** is the landing hub — a grid of cards linking to each application. The **Admin Dashboard** surfaces usage statistics and API-call logs, with role-based admin access enforced on the backend.
 
 ## Architecture
 
 The application runs on a stateless AWS architecture: the FastAPI backend on **ECS Fargate**, the React frontend on **App Runner**, with a **Lambda** DB-updater on a daily **EventBridge** schedule.
 
-**Workflow:**
+**How it fits together:**
 
-1. Each deployment pushes new Docker images for the backend, frontend, and Lambda DB-updater to **Amazon ECR**.
-2. App Runner auto-deploys the latest frontend image; ECS Fargate runs the backend image.
-3. The backend connects to the **RDS PostgreSQL** database via a VPC connector and to **S3** via IAM authentication, performing read/write on the database and reads from the bucket.
-4. The frontend, authenticated through **Azure AD (MSAL)**, can only reach data through the backend over the internet.
-5. A daily EventBridge rule triggers the Lambda DB-updater, which pulls the most recent data from S3 and updates the database.
+- Container images for the backend, frontend, and Lambda DB-updater are published to **Amazon ECR**; App Runner serves the frontend and ECS Fargate runs the stateless backend.
+- The backend reaches **RDS PostgreSQL** (via a VPC connector) and **S3** (via IAM authentication) for state and analytics data; the **Azure AD (MSAL)**-authenticated frontend reaches data only through the backend.
+- A daily **EventBridge** rule triggers the **Lambda** DB-updater, which refreshes the database from the latest S3 data.
 
-**Data sources:** PostgreSQL (comments, saved well groups, API-call logs, the `wells` table), S3 parquet (high-frequency sensor data, daily production data, external comments), **DuckDB** (on-the-fly querying and resampling of the parquet data), and the ArcGIS API (short-lived map tokens). All API endpoints except the health check require an Azure AD bearer token, enforced by a `@requires_auth` decorator.
+**Data sources:** PostgreSQL (comments, saved well groups, API-call logs, a wells reference table), S3 parquet (high-frequency sensor data, daily production data, external comments), **DuckDB** (on-the-fly querying and resampling of the parquet data), and the ArcGIS API (short-lived map tokens). All API endpoints except the health check require an Azure AD bearer token, enforced by a `@requires_auth` decorator.
 
 **CI/CD:** Deployments are automated with GitHub Actions, which builds and pushes the Docker images, runs the backend test suite, and updates the AWS services.
+
+## Design decisions & trade-offs
+
+- **React + Redux SPA over server-rendered reports** — a single-page application was chosen to deliver the responsive, interactive experience that the previous Power BI reports could not, with client-side state driving fast view switching.
+- **DuckDB on parquet, queried on the fly** — rather than pre-computing and storing every possible view, DuckDB queries and resamples S3 parquet at request time, keeping data fresh and storage requirements low.
+- **Split storage by purpose** — S3 parquet for analytical time-series data and PostgreSQL for application state (comments, saved well groups, logs), matching each store to its access pattern.
+- **Capped multi-well selection** — limiting multi-well plots (5 wells / 2 sensors) is a deliberate latency-vs-scope trade-off, keeping responses fast for the common case rather than optimizing for unbounded comparisons.
 
 ## Performance & Reliability Engineering
 

@@ -13,7 +13,7 @@ category: Data Science Development
 
 Data Scientist/Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
-A production data-analytics platform that helps reservoir and production engineers **right-size gas injection on gas-lift wells**. For each well it turns noisy daily production and injection history into a single recommended injection rate, produced by a data-driven model trained against engineer-labeled data. On top of the per-well recommendation it generates the report emailed to operators, ranking every injecting well by how far it has drifted from its recommendation.
+On gas-lift wells, operators routinely over- or under-inject gas, leaving production on the table or wasting injection. This production data-analytics platform helps reservoir and production engineers **right-size gas injection on gas-lift wells**: for each well it turns noisy daily production and injection history into a single recommended injection rate, produced by a data-driven model trained against engineer-labeled data. On top of the per-well recommendation it generates the report emailed to operators, ranking every injecting well by how far it has drifted from its recommendation — contributing to a measurable improvement in net sales.
 
 > _Note: In production use, the tool flagged over-injecting wells and guided operators to reduce injection, contributing to a measurable improvement in net sales. Specific production and financial figures are confidential client data and are omitted._
 
@@ -50,6 +50,17 @@ The penalty weights are fitted **offline** against ground truth collected with t
 - **Optimization** — a train/test split and **Bayesian optimization** (`skopt.gp_minimize`, a Gaussian-process surrogate) in a coordinate stage followed by a joint refinement.
 
 > _Note: Specific tuned weight values, well counts and model accuracy figures are derived from proprietary client data and are omitted._
+
+## Design decisions & trade-offs
+
+- **Data-driven penalty weights over a closed-form physics calculation.** Engineers can label ground-truth optimal rates, and the clustering pipeline already surfaces a good candidate cluster, so the learned weights only have to **pick the right one** — a far easier and more robust problem than modeling the physics directly.
+- **`DecisionTreeRegressor` clustering of injection-rate-versus-time.** This segments history into stretches of roughly constant injection target, matching how operators actually think about a well rather than imposing an arbitrary windowing.
+
+## Hard problems solved
+
+- **Custom training objective.** A loss that primarily minimizes the share of wells whose recommendation is missed beyond a tolerance, with light elastic-net (L1 + L2) regularization on the weights to keep the solution simple and generalizable.
+- **Bayesian optimization over a train/test split.** A Gaussian-process surrogate (`skopt.gp_minimize`) tunes the weights in a coordinate stage followed by a joint refinement, avoiding overfitting to the labeled set.
+- **Train/inference parity.** A shared engineering library is imported by **both** the live app and the offline training notebooks, guaranteeing the trained weights are evaluated against the exact pipeline that runs in production.
 
 ## Report
 

@@ -37,12 +37,25 @@ A containerized, cloud-native stack on AWS, provisioned entirely as code with **
 - **Memory** — **AgentCore Memory** provides session-scoped, persistent conversation history.
 - **Data** — **DynamoDB** stores conversations and feedback; **SSM Parameter Store** holds runtime ARNs and config.
 
+## Design decisions & trade-offs
+
+- **Four interchangeable agent patterns** — Strands Agents, LangGraph, and the Claude Agent SDK in single- and multi-agent configurations are selectable without touching the rest of the stack, future-proofing the system against framework and model changes.
+- **Read-only SQL execution** — a deliberate safety decision: the agent can query the corporate well data but can never mutate it, preventing accidental data changes.
+- **Separated user vs. machine-to-machine auth** — keeping the two identity types distinct prevents user credentials from crossing the service boundary.
+- **Lambda-backed tools over the AgentCore Gateway (MCP)** — exposing tools through the Gateway decouples the agent runtime from tool implementations, so tools can evolve independently of the agent.
+
+## Hard problems solved
+
+- **Live streaming of agent reasoning** — Server-Sent Events stream tool calls, inputs, intermediate results, and the final answer so they render live as the agent reasons, giving users visibility into multi-step reasoning instead of an opaque wait.
+- **Hybrid internal-doc search** — combined embedding and keyword search over internal documentation, with full-document fetch, to surface the most relevant grounding material.
+- **Deploy-free local development** — a local mode mocks authentication (no OIDC popup) and sources AWS credentials from the host profile, so the full chat flow runs end-to-end without deploying.
+
 ## Authentication
 
-Two distinct auth paths keep user and service identities separate:
+The design keeps **user identity** and **machine-to-machine identity** fully separated:
 
-- **User auth** — users sign in through **Microsoft Entra ID (OIDC)**, handled at the **ALB**, which injects the Entra access token downstream; the same token is forwarded to the Runtime and validated by a JWT authorizer.
-- **Machine-to-machine** — the Runtime authenticates to the Gateway as a service using **Cognito** OAuth2 client-credentials, with AgentCore Identity managing token retrieval — no user credentials ever cross that boundary.
+- **User auth** — users sign in through **Microsoft Entra ID (OIDC)**, and a validated token authorizes downstream services on the user's behalf.
+- **Machine-to-machine** — services authenticate to one another with **Cognito** OAuth2 client-credentials, managed by AgentCore Identity. Because the two identity types are separate, user credentials never cross the service boundary.
 
 ## CI/CD & Local Development
 

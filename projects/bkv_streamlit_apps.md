@@ -66,7 +66,7 @@ Calculates the minimum gas flow rate needed to lift liquids out of a wellbore (p
 A real-time sensor dashboard for the active CO2 injection sites, remapping raw SCADA tags to human-readable fields.
 
 - Interactive Plotly WebGL chart with four independent stacked Y-axes (temperature, casing pressure, pressure, mass flow rate); legend groups toggle whole sensor categories.
-- Automatic resampling (1 min → 1 day) once a date range exceeds ~12,000 points, with the active resolution shown above the plot.
+- Adaptive resampling (1 min → 1 day) once a date range grows large, to keep charts interactive, with the active resolution shown above the plot.
 - Data-quality warnings for stale sensor fields and a CSV export of the resampled series.
 
 ## Horner Plots
@@ -84,6 +84,13 @@ Analyzes injection-well performance via the Hall method — cumulative pressure 
 - CSV upload or direct S3 load of the CO2 runtime-history parquet; data resampled to daily averages with forward/backward fill.
 - Configurable flowing-pressure column, assumed reservoir pressure (Pe), tangent window (n_days), and analysis start date.
 - Plotly scatter of cumulative ΔP vs. cumulative flow with a fitted tangent line and shaded slope window; rising slope indicates declining injectivity (potential formation damage).
+
+## Design decisions & trade-offs
+
+- **One multi-page Streamlit app** instead of a separate app per tool — shared sidebar navigation, a single deployment to maintain, and a consistent UX across the whole toolkit.
+- **Read-on-demand S3 parquet by well ID** rather than a pre-built cache or index — prioritizes data freshness and low storage cost over the marginal latency a cache would save.
+- **Parallel Lambda fan-out for batch reports** (Critical Rate Sensitivities, Gas Injection) instead of synchronous computation — handles per-well parallelization at fleet scale without blocking the interactive app.
+- **Robust HuberRegressor for Horner-plot fitting** rather than ordinary least squares — tolerates outliers in noisy pressure-transient data for more reliable permeability estimates.
 
 ## Architecture
 
