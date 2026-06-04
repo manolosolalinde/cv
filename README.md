@@ -136,18 +136,19 @@ An internal infrastructure-as-code library and project scaffolding that standard
    - `bkv-ecs-aws-python` project template with config scripts and GitHub Actions CI/CD (preview-on-PR, deploy-on-merge).
  - _Technologies_: Python, Pulumi, AWS (ECS Fargate, ALB, ECR, Route53, ACM, WAF, CloudWatch, IAM, S3, Athena, Glue, Redshift, Secrets Manager), Azure AD (OIDC + SAML SSO), Docker, GitHub Actions.
 
- **General Oil and Gas Applications** - [BKV Corporation](https://bkvcorp.com) <br>
-Set of applications for optimization of artificial lift systems. 
+**BKV Streamlit Apps** - [project details](./projects/bkv_streamlit_apps.md) <br>
+A multi-page Streamlit platform bundling a growing collection of reservoir and production engineering tools for gas wells, sharing one S3 parquet data pipeline and a single containerized ECS Fargate deployment.
  - _Client_: BKV Corporation
- - _Focus_: Data Science, Machine Learning
+ - _Focus_: Data Science, Cloud Infrastructure
  - _Applications_:
-   - Plunger Optimizations plots, analysis, and reports.
-   - Gas Injection Estimator.
-   - CO2 Injection runtime history app.
-   - Well communication tool.
-   - LLM application for the detection of punch holes in tubing and casing.
-   - Reservoir Pressure Propagation calculator.
- - _Technologies_: Python, Streamlit, pandas, numpy, scikit-learn, plotly, tensorflow, keras.
+   - Resolution Visualizer — visualizes SCADA sensor reading frequency per well, by day and channel.
+   - Salt Water Injection — infinite-reservoir radial pressure-propagation calculator (Theis equation).
+   - Well Communication — detects inter-well pressure interference from correlated production residuals.
+   - Critical Rate Sensitivities — computes the minimum gas rate required to lift liquids out of the wellbore.
+   - CO2 Runtime History — real-time sensor dashboard for the active CO2 injection sites.
+   - Horner Plots — pressure-transient analysis on shut-in data, estimating reservoir permeability.
+   - Hall Plots — injection-well performance from cumulative pressure vs. cumulative injected volume.
+ - _Technologies_: Python, Streamlit, Plotly, Pandas, NumPy, SciPy, Scikit-learn, AWS (ECS Fargate, Lambda, S3, DynamoDB, ECR, CloudWatch, Bedrock), Pulumi, Docker, GitHub Actions, Parquet, MkDocs.
 
 
 **Centralhub Search Engine** - [project details](./projects/centralhub.md) <br>
