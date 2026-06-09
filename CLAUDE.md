@@ -20,7 +20,8 @@ bundle exec jekyll build
 This is a **Jekyll static site** deployed on GitHub Pages at `https://manolosolalinde.github.io/cv/`.
 
 **Content structure:**
-- `README.md` — the main CV page (rendered as the site's index by GitHub Pages)
+- `index.md` — the main CV page (the site's index/homepage). Has `layout: default` frontmatter; the CV body follows.
+- `README.md` — developer-facing repo documentation (stack, layout, dev/PDF commands). Not a published site page (no frontmatter).
 - `projects/*.md` — individual project detail pages linked from the main CV
 - `projects/images/` — screenshots and images referenced by project pages
 
@@ -33,7 +34,7 @@ This is a **Jekyll static site** deployed on GitHub Pages at `https://manolosola
 
 ## Writing a new project page
 
-Each project is one Markdown file in `projects/<name>.md` with YAML frontmatter, optionally linked from `README.md`. The same files are also consumed by the `workwithmanu.com` Gatsby site (see the parent `../CLAUDE.md`), so keep paths relative.
+Each project is one Markdown file in `projects/<name>.md` with YAML frontmatter, optionally linked from `index.md`. The same files are also consumed by the `workwithmanu.com` Gatsby site (see the parent `../CLAUDE.md`), so keep paths relative.
 
 **Frontmatter schema** (copy an existing page like `projects/bkv_sd.md` as a template):
 
@@ -62,7 +63,7 @@ redirect_link: https://example.com                   # optional — external URL
   </a>
   ```
 
-**Link it from `README.md`:** add an entry in the relevant section following the existing format — `**Title** - [project details](./projects/<name>.md) <br>` plus a short description and bullet points. No page-break markers are needed — PDF page breaks are handled automatically by the print CSS.
+**Link it from `index.md`:** add an entry in the relevant section following the existing format — `**Title** - [project details](./projects/<name>.md) <br>` plus a short description and bullet points. No page-break markers are needed — PDF page breaks are handled automatically by the print CSS.
 
 **After adding a page:** pushing to `main` updates GitHub Pages automatically; `workwithmanu.com` only reflects it after a manual Netlify redeploy (see parent `../CLAUDE.md`).
 
