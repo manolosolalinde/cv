@@ -194,17 +194,16 @@ A tool for simulation of wind energy systems using hydrogen and biogas.
 <br><br>
 
 **SPR System - Technical Secretary of Planning - Paraguayan Government** - [project details](./projects/stp-fao.md) <br>
-Design specifications and UI/UX for the [SPR system](https://spr.stp.gov.py/tablero/public/geografico4.jsp) - Technical Secretary of Planning - Paraguayan Government ([STP](https://www.stp.gov.py/v1/)).
- - Worked in a cross-functional, agile team to rebuild the [SPR system](https://www.stp.gov.py/v1/instrumentos-spr/)
+Design specifications and UI/UX for the SPR system - Technical Secretary of Planning - Paraguayan Government (STP).
+ - Worked in a cross-functional, agile team to rebuild the SPR system
  - Assistance with information architecture and UX writing for the web app
- - _Client_: [STP-Paraguay](https://www.stp.gov.py/v1/) 
+ - _Client_: STP-Paraguay
  - _Focus_: UX/UI, Information Architecture
 <br><br>
 
-**StuffILearned - Personal Software development Notes** - [project details](http://181.126.83.235/) <br>
-A software development personal blog to keep track of new technologies, courses and personal notes. **To be replaced soon.**
+**StuffILearned - Personal Software development Notes** - [project details](./projects/stuffilearned.md) <br>
+A software development personal blog to keep track of new technologies, courses and personal notes.
  - Provide easy access to common software development notes. 
- - _Website_: [http://181.126.83.235/](http://181.126.83.235/) 
  - _Focus_: Web Development
  - _Technologies_: PHP, Wordpress, MySQL, html, css.
 <br><br>
@@ -289,7 +288,7 @@ transfer.
 - Course duration: 90hs. Online Course.
 
 **HTML, CSS, and Javascript for Web Developers**
-- Coursera – Johns Hopkins University - [Course details](https://www.coursera.org/learn/html-css-and-javascript-for-web-developers) 
+- Coursera – Johns Hopkins University - [Course details](https://www.coursera.org/learn/html-css-javascript-for-web-developers) 
 - Course duration: 33hs. Online Course.
 
 **Computer Vision Intro™ OpenCV4 in Python with Deep Learning**

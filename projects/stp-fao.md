@@ -11,10 +11,10 @@ category: Project Management
 
 # SPR System - Technical Secretary of Planning - Paraguayan Government
 
-Design specifications and UI/UX of the [SPR system](https://login.stp.gov.py/cas/login) of the Technical Secretary of Planning of the paraguayan government.
- - Worked in a cross-functional, agile team to rebuild the [SPR system](https://www.stp.gov.py/v1/instrumentos-spr/)
+Design specifications and UI/UX of the SPR system of the Technical Secretary of Planning of the paraguayan government.
+ - Worked in a cross-functional, agile team to rebuild the SPR system
  - Assistance with information architecture and UX writing for the web app
- - _Client:_ [STP-Paraguay](https://www.stp.gov.py/v1/) 
+ - _Client:_ STP-Paraguay
 
 ## Screenshots
 
