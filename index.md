@@ -4,7 +4,7 @@ layout: default
 
 # Manuel Solalinde
 
-_Software Developer - MSc. Applied Mathematics - Data Scientist_ <br><br>
+_Senior Full Stack Engineer - AI/LLM Applications - MSc. Applied Mathematics_ <br><br>
 
 [Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github1](https://github.com/manolosolalinde/) / [Github2](https://github.com/manuelsolalindebkv/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
 
