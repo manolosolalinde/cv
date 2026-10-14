@@ -59,6 +59,17 @@ Main developer for the ARTUR platform (C++ Language, VBA), used for the calculat
 
 ## 💻 Projects
 
+**TriformaIQ Real Estate Studio** - [project details](./projects/triformaiq.md) <br>
+An AI-powered multi-tenant SaaS platform for commercial real estate that unifies site selection, entitlements, due diligence and audit-ready documentation.
+ - _Client_: [TriformaIQ](https://www.triformaiq.com/) (via BairesDev)
+ - _Focus_: Full Stack, AI/LLM Features, SaaS Infrastructure
+ - _Key Features_:
+   - LLM-powered document analysis with RAG: ingestion and chunking, vector embeddings and semantic search, citation-grounded structured outputs, and regression evaluation of prompt quality.
+   - Subscription billing and licensing with webhook-driven lifecycle management and plan-based feature gating.
+   - Role-based approval workflows, per-user and per-organization API rate limiting, and geospatial scoring features with strict tenant isolation.
+   - AI-assisted engineering workflows with Claude Code (custom skills and multi-agent orchestration).
+ - _Technologies_: Python, FastAPI, PostgreSQL/PostGIS, pgvector, Celery, Redis, Docker, LLMs, Stripe, ESRI ArcGIS, Auth0, React, TypeScript, Pytest, Playwright.
+
 **AI Agent Chat** - [project details](./projects/bkv_ai_agent_chat.md) <br>
 A full-stack conversational AI agent that answers oil & gas operational questions over the corporate well database and internal documentation, built on Amazon Bedrock AgentCore.
  - _Client_: BKV Corporation
