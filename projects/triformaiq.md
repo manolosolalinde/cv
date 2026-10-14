@@ -1,8 +1,8 @@
 ---
 title: TriformaIQ Real Estate Studio
 description: AI-powered multi-tenant SaaS platform for commercial real estate site selection, entitlements, due diligence and audit-ready documentation.
-image_url: ./images/covers/triformaiq.png
-image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/covers/triformaiq.png
+image_url: ./images/triformaiq/cover.png
+image_url_global: https://raw.githubusercontent.com/manolosolalinde/cv/main/projects/images/triformaiq/cover.png
 date: 2026-10-14
 order: 1
 technologies: Python, FastAPI, SQLModel, PostgreSQL, PostGIS, pgvector, Alembic, Celery, Redis, Docker, LLMs (Anthropic API), RAG, Stripe, ESRI ArcGIS, Auth0, React, TypeScript, Pytest, Playwright, Claude Code.
@@ -13,12 +13,12 @@ category: Full Stack
 
 Website: [https://www.triformaiq.com/](https://www.triformaiq.com/)
 
-Full Stack Engineer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
+Developer: Manuel Solalinde [(manolosolalinde@gmail.com)](mailto:manolosolalinde@gmail.com)
 
 TriformaIQ Real Estate Studio is an **AI-powered, multi-tenant SaaS platform** for commercial real estate teams. It brings site selection, entitlements, due diligence and audit-ready documentation into one workspace, so that teams can evaluate locations with data instead of guesswork.
 
-<a href="./images/covers/triformaiq.png">
-<img src="./images/covers/triformaiq.png" alt="click to enlarge"/>
+<a href="./images/triformaiq/cover.png">
+<img src="./images/triformaiq/cover.png" alt="click to enlarge"/>
 </a>
 
 ## Overview
