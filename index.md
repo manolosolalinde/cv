@@ -6,22 +6,23 @@ layout: default
 
 _Software Developer - MSc. Applied Mathematics - Data Scientist_ <br><br>
 
-[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github1](https://github.com/manuelsolalindebkv/) / [Github2](https://github.com/manolosolalinde/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
+[Email](mailto:manolosolalinde@gmail.com) / [CV](https://manolosolalinde.github.io/cv/) / [LinkedIn](https://www.linkedin.com/in/nestor-solalinde/) / [Github1](https://github.com/manolosolalinde/) / [Github2](https://github.com/manuelsolalindebkv/) / [Stackoverflow](https://stackoverflow.com/users/9831182/nestor-solalinde) / [Website](https://workwithmanu.com/) 
 
 <br><br>
 
 ## 🏢 Work Experience
 
-<!-- Role: Senior Software Engineer
-Date: may/2022 - present
-Description:
-- Built a set of web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
-- Significantly enhanced the efficiency of existing data processing algorithms, achieving over 10x improvement in performance. This set of optimizations led to significant increase in the usage of related applications.
-- Developed templates and libraries, streamlining the process of creating new applications and reusing existing components.
-- Architected and implemented AWS Infrastructure Solutions. Spearheaded the development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
-- Technologies used: Python, Javascript, Fastapi, React, Azure AD (Corporate authentication), Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend). -->
+**Senior Software Engineer** - [BairesDev](https://www.bairesdev.com/) - May 2022 - present <br>
+ - Full stack engineer on [TriformaIQ Real Estate Studio](https://www.triformaiq.com/), an AI-powered multi-tenant SaaS platform for commercial real estate. It combines GIS-based site selection with weighted multi-criteria scoring, entitlements, due diligence, document management and audit-ready records.
+ - Built LLM-powered document analysis features using retrieval-augmented generation (RAG): document ingestion and chunking, vector embeddings and semantic search, structured LLM outputs grounded in source citations, and regression evaluation of prompt quality.
+ - Implemented subscription billing and licensing: payment provider integration via webhooks, subscription lifecycle management, and plan-based feature gating.
+ - Developed role-based approval workflows, per-user and per-organization rate limiting of third-party APIs, and geospatial data features with tenant data isolation.
+ - Designed AI-assisted development workflows with Claude Code (custom skills and multi-agent orchestration) that automate ticket analysis, implementation, code review and end-to-end verification.
+ - Involved in development of web applications and data science projects at BKV Corporation, focusing on creating intuitive surveillance dashboards and engineering tools. 
+ - My role includes analyzing and interpreting extensive datasets, employing advanced methods to extract actionable insights
+ - Technologies: Python, FastAPI, SQLModel, PostgreSQL/PostGIS, pgvector, Alembic, Celery, Redis, Docker, Anthropic API, Stripe, ESRI ArcGIS, Auth0, React, TypeScript, Pytest, Playwright.
 
-**Senior Software Engineer** - [BKV Corporation](https://www.bkvcorp.com) - May 2022 - present <br>
+**Senior Software Engineer** - [BKV Corporation](https://www.bkvcorp.com) - May 2022 - June 2026 <br>
  - Designed and developed machine learning applications for optimization of artificial lift systems.
  - Developed AI-powered applications leveraging large language models for event detection and data structuring in gas well operations.
  - Built web applications for real-time visualization, analysis, and processing of gas wells data, to facilitate insightful data interpretation and decision-making for engineers and managers.
@@ -30,17 +31,6 @@ Description:
  - Architected and implemented AWS Infrastructure Solutions. Development of robust libraries and templates for seamless deployment of infrastructure into AWS, leveraging advanced infrastructure as code techniques with pulumi.
  - Technologies: Python, Javascript, Fastapi, React, Azure AD, Plotly, Redux, Postgres SQL, AWS Cloud Computing Services, Nodejs, HTML/CSS. Testing: Cypress, Jest (frontend), Pytest (backend).
  - Data Science libraries: scikit-learn, pandas, numpy, plotly, tensorflow, keras, streamlit.
-
-
- <!-- Role: Senior Software Engineer
-Date: may/2022 - present
-Description:
-Working with BKV Corporation on software development applications and data science projects. 
-Creating surveillance dashboards and engineering tools. Engaging in the analysis and analytics of extensive datasets. -->
-
-**Senior Software Engineer** - [BairesDev](https://www.bairesdev.com/) - May 2022 - present <br>
- - Involved in development of web applications and data science projects at BKV Corporation, focusing on creating intuitive surveillance dashboards and engineering tools. 
- - My role includes analyzing and interpreting extensive datasets, employing advanced methods to extract actionable insights
 
 <!-- SCE S.A. -->
 <!-- - Full Stack Developer for Centralhub Search Engine Platform. A search engine platform based on web scraping automation of regional e-commerce sites. 
